@@ -6,252 +6,307 @@
     <title>Política de Privacidad - OPCIO Group</title>
     <meta name="description" content="Política de privacidad de OPCIO Group. Información sobre el tratamiento de datos personales y derechos de los usuarios.">
     
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5881C6',
+                        secondary: '#95A1B8',
+                        accent: '#A4C3D9',
+                        neutral: '#334056',
+                        support: '#CCD6EB',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-4">
-                    <a href="index.html">
-                        <img src="images/logo-opcio.svg" alt="OPCIO Group" class="h-10">
-                    </a>
-                    <span class="text-xl font-bold text-gray-800">OPCIO Group</span>
-                </div>
+<body class="font-body bg-gray-50">
+    <!-- Header V2 -->
+    <header class="header-v2">
+        <div class="nav-container-v2">
+            <a href="index.html" class="nav-logo-link">
+                <img src="images/opcio-logo.svg" alt="OPCIO Group" class="logo-light" style="height: 50px;">
+                <img src="images/opcio-logo.svg" alt="OPCIO Group" class="logo-dark" style="height: 50px;">
+            </a>
+            
+            <nav class="nav-main">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
                 
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Inicio</a>
-                    <a href="contacto.html" class="text-gray-700 hover:text-blue-600 transition-colors">Contacto</a>
+            <div class="nav-actions">
+                <a href="index.html#contacto" class="btn cta-header-btn">
+                    <span>Contáctanos</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="nav-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Main Content -->
-    <main class="py-12">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Política de Privacidad</h1>
+    <main class="py-32">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="bg-white rounded-3xl shadow-lg p-8 md:p-16">
+                <h1 class="font-display text-4xl md:text-5xl font-bold text-neutral mb-8">Política de Privacidad</h1>
                 
-                <div class="prose prose-lg max-w-none">
-                    <p class="text-gray-600 mb-8">
-                        <strong>Última actualización:</strong> 1 de enero de 2024
-                    </p>
+                <p class="text-secondary text-lg mb-12">
+                    <strong>Última actualización:</strong> 19 de octubre de 2022
+                </p>
 
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">1. Información General</h2>
-                        <p class="text-gray-600 mb-4">
-                            OPCIO Group (en adelante, "nosotros", "nuestro" o "la empresa") se compromete a proteger la privacidad y los datos personales de nuestros usuarios, clientes y visitantes del sitio web. Esta Política de Privacidad describe cómo recopilamos, utilizamos, almacenamos y protegemos su información personal.
+                <!-- Política 1: Formulario de Contacto -->
+                <section class="mb-16">
+                    <h2 class="font-display text-3xl font-bold text-neutral mb-8 pb-4 border-b-2 border-primary/20">
+                        Política de Privacidad Usuarios Web – Formulario de Contacto
+                    </h2>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">RESPONSABLE</p>
+                            <p class="text-neutral">OPCIÓ RECURSOS HUMANS, S.L.</p>
+                        </div>
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">FINALIDAD</p>
+                            <p class="text-neutral">Gestionar las consultas de los usuarios de la web</p>
+                        </div>
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">BASE JURÍDICA</p>
+                            <p class="text-neutral">El consentimiento del usuario</p>
+                        </div>
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">DESTINATARIOS</p>
+                            <p class="text-neutral">Sus datos no se cederán</p>
+                        </div>
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">CONSERVACIÓN</p>
+                            <p class="text-neutral">Doce (12) meses</p>
+                        </div>
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">DERECHOS</p>
+                            <p class="text-neutral">Acceder, rectificar, cancelar, oponerse, limitar y portabilidad</p>
+                        </div>
+                    </div>
+
+                    <div class="prose prose-lg max-w-none text-secondary space-y-6">
+                        <p>
+                            De acuerdo con lo establecido en la <strong>Ley 29/2021, de 28 de octubre, Cualificada de Protección de Datos Personales (LQPD)</strong>, así como del <strong>Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, Reglamento General de Protección de Datos (GDPR)</strong>, le informamos que sus datos de carácter personal recogidos a través del "Formulario de Contacto", serán tratados por el Responsable del Tratamiento:
                         </p>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <h3 class="font-semibold text-gray-800 mb-2">Datos del Responsable:</h3>
-                            <p class="text-gray-600">
-                                <strong>Razón Social:</strong> OPCIO Group<br>
-                                <strong>Dirección:</strong> Andorra la Vella, Principado de Andorra<br>
-                                <strong>Email:</strong> info@opciogroup.com<br>
-                                <strong>Teléfono:</strong> +376 123 456
+
+                        <div class="bg-neutral/5 p-6 rounded-xl my-6">
+                            <h3 class="font-display text-xl font-bold text-neutral mb-4">Responsable del Tratamiento</h3>
+                            <p class="mb-2"><strong>OPCIÓ RECURSOS HUMANS, S.L.</strong></p>
+                            <ul class="space-y-2 text-neutral">
+                                <li><i class="fas fa-id-card text-primary mr-2"></i>NRT: 702843-S</li>
+                                <li><i class="fas fa-map-marker-alt text-primary mr-2"></i>Dirección: Av. Meritxell, núm. 62, 4t pis, AD500 Andorra la Vella, Principado de Andorra</li>
+                                <li><i class="fas fa-phone text-primary mr-2"></i>Teléfono: +376 806 270</li>
+                                <li><i class="fas fa-envelope text-primary mr-2"></i>Email: opcio@opcio-rrhh.com</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-neutral/5 p-6 rounded-xl my-6">
+                            <h3 class="font-display text-xl font-bold text-neutral mb-4">Delegado de Protección de Datos</h3>
+                            <p class="mb-2"><strong>CP COMPLIANCE I PRIVACITAT LEGAL, S.L.U</strong></p>
+                            <ul class="space-y-2 text-neutral">
+                                <li><i class="fas fa-phone text-primary mr-2"></i>Teléfono: +376 380 017</li>
+                                <li><i class="fas fa-envelope text-primary mr-2"></i>Email: dpo@cplegalconsulting.com</li>
+                            </ul>
+                        </div>
+
+                        <p>
+                            Sus datos serán tratados con la finalidad de gestionar las solicitudes y/o consultas realizadas en nuestro web a través del Formulario de Contacto. Nos podremos poner en contacto con usted a través de correo electrónico o por vía telefónica, en razón de los datos que nos ha facilitado.
+                        </p>
+
+                        <p>
+                            La base legitimadora del tratamiento de sus datos personales se fundamenta en su consentimiento otorgado a través de la aceptación de la presente política de privacidad.
+                        </p>
+
+                        <p>
+                            Asimismo, le informamos que el tratamiento de los datos no comporta decisiones automatizadas, ni la elaboración de perfiles con finalidades predictivas de preferencias personales, comportamientos o actitudes.
+                        </p>
+
+                        <p>
+                            Sus datos no serán cedidos a otros responsables, nacionales y/o internacionales; a excepción de aquellos casos en que exista una obligación legal de hacerlo. Los datos proporcionados se conservarán durante el período máximo de 12 meses.
+                        </p>
+
+                        <p>
+                            Usted tiene derecho a no otorgar su consentimiento para el tratamiento de sus datos personales; pero, en este caso, las consecuencias de su negativa implicarán la imposibilidad de darle respuesta a su consulta.
+                        </p>
+
+                        <div class="bg-primary/10 border-l-4 border-primary p-6 rounded-r-xl my-6">
+                            <h4 class="font-display font-bold text-neutral mb-3">Sus Derechos</h4>
+                            <p>
+                                Aprovechando la oportunidad le comunicamos que puede ejercer los derechos de acceso, rectificación, oposición, supresión, limitación y portabilidad, así como su decisión de no ser objeto de decisiones individuales automatizadas; poniéndose en contacto con el Responsable del Tratamiento a través del correo electrónico <strong>opcio@opcio-rrhh.com</strong> o con nuestro Delegado en <strong>dpo@cplegalconsulting.com</strong>
+                            </p>
+                            <p class="mt-3">
+                                Asimismo, en caso de no poder ejercer sus derechos ante el Responsable del Tratamiento, tiene usted derecho a dirigir su reclamación a la <strong>Agencia de Protección de Datos Andorrana (APDA)</strong>.
                             </p>
                         </div>
-                    </section>
+                    </div>
+                </section>
 
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">2. Información que Recopilamos</h2>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">2.1 Información Personal</h3>
-                        <p class="text-gray-600 mb-4">
-                            Recopilamos información personal cuando usted:
-                        </p>
-                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
-                            <li>Se pone en contacto con nosotros a través de formularios de contacto</li>
-                            <li>Solicita información sobre nuestros servicios</li>
-                            <li>Se suscribe a nuestro boletín informativo</li>
-                            <li>Participa en nuestros programas de formación o consultoría</li>
-                            <li>Visita nuestras oficinas o eventos</li>
-                        </ul>
+                <!-- Política 2: Formulario de Currículums -->
+                <section class="mb-16">
+                    <h2 class="font-display text-3xl font-bold text-neutral mb-8 pb-4 border-b-2 border-primary/20">
+                        Política de Privacidad de Candidatos – Formulario de Currículums
+                    </h2>
 
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">2.2 Tipos de Datos</h3>
-                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
-                            <li>Datos de identificación: nombre, apellidos, DNI/NIE</li>
-                            <li>Datos de contacto: dirección, teléfono, email</li>
-                            <li>Datos profesionales: empresa, cargo, sector</li>
-                            <li>Datos de navegación: cookies, IP, historial de navegación</li>
-                            <li>Datos de comunicación: mensajes, consultas, feedback</li>
-                        </ul>
-
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">2.3 Información Técnica</h3>
-                        <p class="text-gray-600 mb-4">
-                            Recopilamos automáticamente cierta información técnica cuando visita nuestro sitio web, incluyendo su dirección IP, tipo de navegador, páginas visitadas y tiempo de permanencia.
-                        </p>
-                    </section>
-
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">3. Cómo Utilizamos su Información</h2>
-                        <p class="text-gray-600 mb-4">
-                            Utilizamos su información personal para los siguientes fines:
-                        </p>
-                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
-                            <li>Responder a sus consultas y solicitudes de información</li>
-                            <li>Prestar nuestros servicios de consultoría y formación</li>
-                            <li>Enviar comunicaciones comerciales (con su consentimiento)</li>
-                            <li>Mejorar nuestros servicios y experiencia del usuario</li>
-                            <li>Cumplir con obligaciones legales y regulatorias</li>
-                            <li>Gestionar la relación contractual</li>
-                            <li>Realizar análisis estadísticos y de mercado</li>
-                        </ul>
-                    </section>
-
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">4. Base Legal del Tratamiento</h2>
-                        <p class="text-gray-600 mb-4">
-                            El tratamiento de sus datos personales se basa en:
-                        </p>
-                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
-                            <li><strong>Consentimiento:</strong> Para comunicaciones comerciales y cookies no esenciales</li>
-                            <li><strong>Ejecución contractual:</strong> Para la prestación de servicios contratados</li>
-                            <li><strong>Interés legítimo:</strong> Para mejorar nuestros servicios y análisis</li>
-                            <li><strong>Cumplimiento legal:</strong> Para obligaciones fiscales y regulatorias</li>
-                        </ul>
-                    </section>
-
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">5. Compartir Información</h2>
-                        <p class="text-gray-600 mb-4">
-                            No vendemos, alquilamos o compartimos su información personal con terceros, excepto en los siguientes casos:
-                        </p>
-                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
-                            <li>Proveedores de servicios que nos ayudan a operar nuestro negocio</li>
-                            <li>Cuando sea requerido por ley o autoridades competentes</li>
-                            <li>Para proteger nuestros derechos legales</li>
-                            <li>Con su consentimiento explícito</li>
-                        </ul>
-                    </section>
-
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">6. Seguridad de los Datos</h2>
-                        <p class="text-gray-600 mb-4">
-                            Implementamos medidas técnicas y organizativas apropiadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción, incluyendo:
-                        </p>
-                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
-                            <li>Cifrado de datos en tránsito y en reposo</li>
-                            <li>Controles de acceso y autenticación</li>
-                            <li>Monitoreo regular de sistemas</li>
-                            <li>Formación del personal en protección de datos</li>
-                            <li>Auditorías periódicas de seguridad</li>
-                        </ul>
-                    </section>
-
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">7. Retención de Datos</h2>
-                        <p class="text-gray-600 mb-4">
-                            Conservamos su información personal durante el tiempo necesario para cumplir con los fines para los que fue recopilada:
-                        </p>
-                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
-                            <li>Datos de clientes: Durante la relación contractual + 6 años</li>
-                            <li>Datos de prospección: 3 años desde la última interacción</li>
-                            <li>Datos de newsletter: Hasta la baja del servicio</li>
-                            <li>Datos de navegación: 2 años</li>
-                        </ul>
-                    </section>
-
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">8. Sus Derechos</h2>
-                        <p class="text-gray-600 mb-4">
-                            Usted tiene los siguientes derechos respecto a sus datos personales:
-                        </p>
-                        <ul class="list-disc list-inside text-gray-600 mb-4 space-y-2">
-                            <li><strong>Acceso:</strong> Obtener información sobre el tratamiento de sus datos</li>
-                            <li><strong>Rectificación:</strong> Corregir datos inexactos o incompletos</li>
-                            <li><strong>Supresión:</strong> Solicitar la eliminación de sus datos</li>
-                            <li><strong>Limitación:</strong> Restringir el tratamiento de sus datos</li>
-                            <li><strong>Portabilidad:</strong> Recibir sus datos en formato estructurado</li>
-                            <li><strong>Oposición:</strong> Oponerse al tratamiento de sus datos</li>
-                            <li><strong>Retirada de consentimiento:</strong> Retirar el consentimiento en cualquier momento</li>
-                        </ul>
-                        <div class="bg-green-50 p-4 rounded-lg">
-                            <p class="text-gray-600">
-                                Para ejercer estos derechos, puede contactarnos en: <strong>info@opciogroup.com</strong>
-                            </p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">RESPONSABLE</p>
+                            <p class="text-neutral">OPCIÓ RECURSOS HUMANS, S.L.</p>
                         </div>
-                    </section>
-
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">9. Cookies</h2>
-                        <p class="text-gray-600 mb-4">
-                            Utilizamos cookies y tecnologías similares para mejorar su experiencia en nuestro sitio web. Para más información, consulte nuestra <a href="cookies.html" class="text-blue-600 hover:text-blue-800">Política de Cookies</a>.
-                        </p>
-                    </section>
-
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">10. Transferencias Internacionales</h2>
-                        <p class="text-gray-600 mb-4">
-                            En caso de transferir sus datos fuera del Espacio Económico Europeo, garantizamos que se aplicarán las medidas de protección adecuadas, incluyendo cláusulas contractuales tipo o certificaciones de adecuación.
-                        </p>
-                    </section>
-
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">11. Menores de Edad</h2>
-                        <p class="text-gray-600 mb-4">
-                            Nuestros servicios no están dirigidos a menores de 16 años. No recopilamos intencionalmente información personal de menores sin el consentimiento parental apropiado.
-                        </p>
-                    </section>
-
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">12. Cambios en esta Política</h2>
-                        <p class="text-gray-600 mb-4">
-                            Podemos actualizar esta Política de Privacidad periódicamente. Los cambios significativos serán notificados a través de nuestro sitio web o por email. La fecha de la última actualización aparece al inicio de esta política.
-                        </p>
-                    </section>
-
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">13. Contacto</h2>
-                        <p class="text-gray-600 mb-4">
-                            Si tiene preguntas sobre esta Política de Privacidad o sobre el tratamiento de sus datos personales, puede contactarnos:
-                        </p>
-                        <div class="bg-gray-50 p-4 rounded-lg">
-                            <p class="text-gray-600">
-                                <strong>Email:</strong> info@opciogroup.com<br>
-                                <strong>Teléfono:</strong> +376 123 456<br>
-                                <strong>Dirección:</strong> Andorra la Vella, Principado de Andorra
-                            </p>
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">FINALIDAD</p>
+                            <p class="text-neutral">Gestionar currículums de candidatos</p>
                         </div>
-                    </section>
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">CONSERVACIÓN</p>
+                            <p class="text-neutral">Dos (2) años</p>
+                        </div>
+                    </div>
 
-                    <section class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">14. Autoridad de Control</h2>
-                        <p class="text-gray-600 mb-4">
-                            Si considera que el tratamiento de sus datos no se ajusta a la normativa, puede presentar una reclamación ante la Autoridad de Protección de Datos competente.
+                    <div class="prose prose-lg max-w-none text-secondary space-y-6">
+                        <p>
+                            Sus datos serán tratados con la finalidad de gestionar su currículum para su registro en nuestra base de datos como candidato y la correcta prestación de nuestros servicios.
                         </p>
-                    </section>
-                </div>
+                        <p>
+                            Los datos proporcionados se conservarán durante el período máximo de 2 años.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Política 3: Formación -->
+                <section class="mb-16">
+                    <h2 class="font-display text-3xl font-bold text-neutral mb-8 pb-4 border-b-2 border-primary/20">
+                        Política de Privacidad Formación
+                    </h2>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">RESPONSABLE</p>
+                            <p class="text-neutral">OPCIÓ RECURSOS HUMANS, S.L.</p>
+                        </div>
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">FINALIDAD</p>
+                            <p class="text-neutral">Gestionar su inscripción a la formación</p>
+                        </div>
+                        <div class="bg-primary/5 p-6 rounded-xl">
+                            <p class="text-sm font-semibold text-primary mb-2">BASE JURÍDICA</p>
+                            <p class="text-neutral">Consentimiento y ejecución del contrato</p>
+                        </div>
+                    </div>
+
+                    <div class="prose prose-lg max-w-none text-secondary space-y-6">
+                        <p>
+                            Sus datos serán tratados con la finalidad de gestionar su inscripción a nuestra formación. Nos podremos poner en contacto con usted a través de correo electrónico o por vía telefónica, en razón de los datos que nos ha facilitado.
+                        </p>
+                        <p>
+                            La base legitimadora del tratamiento de sus datos personales se fundamenta en su consentimiento otorgado a través de la aceptación de la presente política de privacidad y la ejecución del contrato de prestación de servicios que ha contratado.
+                        </p>
+                        <p>
+                            Sus datos serán conservados el tiempo que esté vigente nuestra relación y mientras no dé de baja su subscripción. Transcurridos los términos máximos de conservación establecidos legalmente, sus datos serán suprimidos.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section class="bg-gradient-to-br from-primary/10 to-accent/10 p-8 rounded-2xl">
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-6 text-center">¿Tiene preguntas sobre esta política?</h3>
+                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                        <div>
+                            <i class="fas fa-envelope text-primary text-3xl mb-3"></i>
+                            <p class="text-neutral"><strong>Email</strong></p>
+                            <a href="mailto:opcio@opcio-rrhh.com" class="text-primary hover:text-accent transition-colors">opcio@opcio-rrhh.com</a>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone text-primary text-3xl mb-3"></i>
+                            <p class="text-neutral"><strong>Teléfono</strong></p>
+                            <a href="tel:+376806270" class="text-primary hover:text-accent transition-colors">+376 806 270</a>
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt text-primary text-3xl mb-3"></i>
+                            <p class="text-neutral"><strong>Dirección</strong></p>
+                            <p class="text-secondary">Av. Meritxell 62, 4t pis<br>AD500 Andorra la Vella</p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <div class="flex items-center justify-center space-x-3 mb-4">
-                    <img src="images/logo-opcio-white.svg" alt="OPCIO Group" class="h-6">
-                    <span class="text-lg font-bold">OPCIO Group</span>
+    <footer class="text-white" style="background-color: #334056;">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="md:col-span-1 space-y-4">
+                    <img src="images/opcio-logo-1color.svg" alt="OPCIO Group Logo" class="h-12 mb-4 brightness-0 invert">
+                    <p class="text-gray-400">Transformando el potencial en rendimiento desde 1995.</p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
                 </div>
-                <p class="text-gray-400 mb-4">
-                    Transformamos el potencial humano en rendimiento organizacional desde 1995.
-                </p>
-                <div class="flex justify-center space-x-6 text-sm text-gray-400">
-                    <a href="privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a>
-                    <a href="terms.html" class="hover:text-white transition-colors">Términos y Condiciones</a>
-                    <a href="cookies.html" class="hover:text-white transition-colors">Política de Cookies</a>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Navegación</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="index.html#servicios" class="text-gray-400 hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="index.html#nosotros" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="index.html#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
                 </div>
-                <div class="mt-4 text-center text-gray-400">
-                    <p>&copy; 2024 OPCIO Group. Todos los derechos reservados.</p>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">Política de Privacidad</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Aviso Legal</a></li>
+                        <li><a href="terms.html#cookies" class="text-gray-400 hover:text-white transition-colors">Política de Cookies</a></li>
+                    </ul>
                 </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1.5"></i><span>Av. Meritxell, núm. 62, 4t pis<br>AD500 Andorra la Vella</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone"></i><span>+376 806 270</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope"></i><a href="mailto:opcio@opcio-rrhh.com" class="hover:text-white transition-colors">opcio@opcio-rrhh.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10 text-center text-sm text-gray-400">
+                <p>&copy; 2026 OPCIÓ RECURSOS HUMANS, S.L. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
-</html> 
+</html>
