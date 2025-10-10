@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuerpos Especiales - OPCIO Group | Evaluación Psicológica Especializada</title>
+    <meta name="description" content="Evaluación psicológica y formación especializada para cuerpos especiales: bomberos, policía, emergencias y seguridad.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5881C6',
+                        secondary: '#95A1B8',
+                        accent: '#A4C3D9',
+                        neutral: '#334056',
+                        support: '#CCD6EB',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body bg-white">
+    <!-- Header V2 -->
+    <header class="header-v2">
+        <div class="nav-container-v2">
+            <a href="index.html" class="nav-logo-link">
+                <img src="images/opcio-logo.svg" alt="OPCIO Group" class="logo-light" style="height: 50px;">
+                <img src="images/opcio-logo.svg" alt="OPCIO Group" class="logo-dark" style="height: 50px;">
+            </a>
+            
+            <nav class="nav-main">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-dropdown">
+                        <a href="index.html#servicios" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="consultoria.html">Consultoría Organizacional</a></li>
+                            <li><a href="formacion.html">Formación a Medida</a></li>
+                            <li><a href="coaching.html">Coaching Ejecutivo</a></li>
+                            <li><a href="evaluacion.html">Evaluación de Talento</a></li>
+                            <li><a href="cuerpos-especiales.html" class="active">Cuerpos Especiales</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="index.html#equipo" class="nav-link">Equipo</a></li>
+                    <li><a href="index.html#casos-exito" class="nav-link">Casos de Éxito</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+                
+                <div class="nav-actions">
+                <a href="index.html#contacto" class="btn cta-header-btn">
+                    <span>Contáctanos</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="nav-toggle">
+                    <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Video -->
+        <div class="absolute inset-0">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover" style="filter: brightness(0.4);">
+                <source src="videos/emergency-services.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/60 to-neutral/80"></div>
+        </div>
+
+        <div class="relative z-10 text-center text-white px-6 max-w-5xl mx-auto py-32">
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight" data-aos="fade-up">
+                Cuerpos Especiales
+            </h1>
+            <p class="text-xl md:text-2xl mb-16 leading-relaxed text-white/90 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Evaluación psicológica y formación especializada para profesionales que protegen y sirven
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="index.html#contacto" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-primary font-semibold text-lg rounded-xl hover:bg-accent hover:text-white transform hover:scale-105 transition-all duration-300 shadow-xl">
+                    <span>Solicitar Información</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-32 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-neutral mb-8">
+                    Las exigencias únicas de los cuerpos especiales
+                </h2>
+                <p class="text-2xl text-secondary leading-relaxed max-w-4xl mx-auto">
+                    Los profesionales de cuerpos especiales se enfrentan a desafíos extraordinarios que requieren evaluaciones y formación especializadas
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 mb-20">
+                <div class="space-y-10" data-aos="fade-right">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-exclamation-triangle text-3xl text-primary"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-bold text-neutral mb-4">Situaciones de Alto Estrés</h3>
+                            <p class="text-lg text-secondary leading-relaxed">
+                                Toma de decisiones críticas en condiciones extremas y bajo presión constante.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-brain text-3xl text-primary"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-bold text-neutral mb-4">Resistencia Psicológica</h3>
+                            <p class="text-lg text-secondary leading-relaxed">
+                                Capacidad de mantener la calma y efectividad frente a situaciones traumáticas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-10" data-aos="fade-left">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-users text-3xl text-primary"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-bold text-neutral mb-4">Trabajo en Equipo Crítico</h3>
+                            <p class="text-lg text-secondary leading-relaxed">
+                                Coordinación perfecta donde cada decisión puede marcar la diferencia.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-heartbeat text-3xl text-primary"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-bold text-neutral mb-4">Bienestar Emocional</h3>
+                            <p class="text-lg text-secondary leading-relaxed">
+                                Prevención del burnout y mantenimiento de la salud mental a largo plazo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-32 bg-gradient-to-br from-support/30 to-accent/20">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-neutral mb-8">
+                    Evaluación y formación especializada
+                </h2>
+                <p class="text-2xl text-secondary leading-relaxed max-w-4xl mx-auto">
+                    Programas diseñados específicamente para las necesidades únicas de cada cuerpo especial
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-12 mb-20">
+                <div class="bg-white rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300 border-2 border-primary/10" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-clipboard-check text-3xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-6">Evaluación Psicológica</h3>
+                    <p class="text-lg text-secondary leading-relaxed mb-6">
+                        Tests especializados y entrevistas clínicas diseñadas para cuerpos de emergencia.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-neutral">
+                            <i class="fas fa-check text-primary mt-1"></i>
+                            <span class="text-lg">Evaluación de aptitudes específicas</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-neutral">
+                            <i class="fas fa-check text-primary mt-1"></i>
+                            <span class="text-lg">Análisis de resistencia al estrés</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-neutral">
+                            <i class="fas fa-check text-primary mt-1"></i>
+                            <span class="text-lg">Informes detallados y confidenciales</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300 border-2 border-primary/10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-graduation-cap text-3xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-6">Formación Especializada</h3>
+                    <p class="text-lg text-secondary leading-relaxed mb-6">
+                        Programas de formación adaptados a los retos específicos de cada cuerpo.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-neutral">
+                            <i class="fas fa-check text-primary mt-1"></i>
+                            <span class="text-lg">Gestión del estrés operativo</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-neutral">
+                            <i class="fas fa-check text-primary mt-1"></i>
+                            <span class="text-lg">Comunicación en crisis</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-neutral">
+                            <i class="fas fa-check text-primary mt-1"></i>
+                            <span class="text-lg">Liderazgo bajo presión</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-10 shadow-sm hover:shadow-lg transition-all duration-300 border-2 border-primary/10" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-hands-helping text-3xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-6">Apoyo Continuo</h3>
+                    <p class="text-lg text-secondary leading-relaxed mb-6">
+                        Acompañamiento psicológico para profesionales en activo y situaciones críticas.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-neutral">
+                            <i class="fas fa-check text-primary mt-1"></i>
+                            <span class="text-lg">Intervención post-traumática</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-neutral">
+                            <i class="fas fa-check text-primary mt-1"></i>
+                            <span class="text-lg">Prevención del burnout</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-neutral">
+                            <i class="fas fa-check text-primary mt-1"></i>
+                            <span class="text-lg">Debriefing profesional</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectors Section -->
+    <section class="py-32 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-neutral mb-8">
+                    Sectores especializados
+                </h2>
+                <p class="text-2xl text-secondary leading-relaxed max-w-4xl mx-auto">
+                    Trabajamos con diferentes cuerpos especiales, adaptando nuestros servicios a las necesidades de cada uno
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-24 h-24 bg-gradient-to-br from-red-500 to-orange-500 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-fire text-4xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-4">Bomberos</h3>
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Evaluación y formación especializada para servicios de emergencia y rescate
+                    </p>
+                </div>
+
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-24 h-24 bg-gradient-to-br from-primary to-blue-700 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-shield-alt text-4xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-4">Policía</h3>
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Programas específicos para fuerzas de seguridad y orden público
+                    </p>
+                </div>
+
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-teal-500 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-ambulance text-4xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-4">Servicios de Emergencia</h3>
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Apoyo para equipos de emergencias médicas y servicios de urgencia
+                    </p>
+                </div>
+
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-user-shield text-4xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-4">Seguridad Privada</h3>
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Evaluación para profesionales de seguridad y protección
+                    </p>
+                </div>
+
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-24 h-24 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-mountain text-4xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-4">Equipos de Rescate</h3>
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Servicios para equipos de rescate y salvamento en montaña
+                    </p>
+                </div>
+
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-life-ring text-4xl text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-4">Protección Civil</h3>
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Evaluación para personal de protección civil y gestión de emergencias
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-32 bg-gradient-to-br from-support/30 to-accent/20">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-neutral mb-8">
+                    Nuestro proceso
+                </h2>
+                <p class="text-2xl text-secondary leading-relaxed max-w-4xl mx-auto">
+                    Un enfoque riguroso y profesional que garantiza la máxima confidencialidad y precisión
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-8">
+                        <span class="text-white text-3xl font-bold">1</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-6">Análisis de Necesidades</h3>
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Evaluamos los requisitos específicos del cuerpo especial y definimos objetivos claros.
+                    </p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-8">
+                        <span class="text-white text-3xl font-bold">2</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-6">Diseño Personalizado</h3>
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Creamos un programa de evaluación adaptado a las particularidades del sector.
+                    </p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-8">
+                        <span class="text-white text-3xl font-bold">3</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-6">Implementación</h3>
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Ejecutamos las evaluaciones con la máxima confidencialidad y rigor profesional.
+                    </p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-8">
+                        <span class="text-white text-3xl font-bold">4</span>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-neutral mb-6">Seguimiento</h3>
+                    <p class="text-lg text-secondary leading-relaxed">
+                        Proporcionamos informes detallados y apoyo continuo según las necesidades.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-32 bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-neutral mb-8">
+                    Experiencia que respalda
+                </h2>
+                <p class="text-2xl text-secondary leading-relaxed max-w-4xl mx-auto">
+                    Más de 25 años apoyando a profesionales que protegen a nuestra comunidad
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-6xl font-bold text-primary mb-4">25+</div>
+                    <div class="text-xl text-neutral font-semibold mb-2">Años de Experiencia</div>
+                    <div class="text-lg text-secondary">En evaluación especializada</div>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-6xl font-bold text-primary mb-4">200+</div>
+                    <div class="text-xl text-neutral font-semibold mb-2">Profesionales Evaluados</div>
+                    <div class="text-lg text-secondary">De diferentes cuerpos especiales</div>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-6xl font-bold text-primary mb-4">100%</div>
+                    <div class="text-xl text-neutral font-semibold mb-2">Confidencialidad</div>
+                    <div class="text-lg text-secondary">Garantizada en todos los procesos</div>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-6xl font-bold text-primary mb-4">6</div>
+                    <div class="text-xl text-neutral font-semibold mb-2">Sectores Especializados</div>
+                    <div class="text-lg text-secondary">Servicios adaptados a cada uno</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 bg-gradient-to-br from-primary to-neutral relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 max-w-4xl relative z-10">
+            <div class="text-center" data-aos="fade-up">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-8">
+                    ¿Necesitas evaluación especializada?
+                </h2>
+                <p class="text-2xl text-white/90 mb-12 leading-relaxed">
+                    Contáctanos para conocer cómo podemos apoyar a tu equipo con nuestros servicios especializados
+                </p>
+                <a href="index.html#contacto" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-primary font-semibold text-lg rounded-xl hover:bg-accent hover:text-white transform hover:scale-105 transition-all duration-300 shadow-xl">
+                    <span>Solicitar Información</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white" style="background-color: #334056;">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- About -->
+                <div class="md:col-span-1 space-y-4">
+                    <img src="images/opcio-logo-1color.svg" alt="OPCIO Group Logo" class="h-12 mb-4 brightness-0 invert">
+                    <p class="text-gray-400">Transformando el potencial en rendimiento desde 1995.</p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Navegación</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="index.html#servicios" class="text-gray-400 hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="index.html#metodo" class="text-gray-400 hover:text-white transition-colors">Método</a></li>
+                        <li><a href="index.html#nosotros" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="index.html#equipo" class="text-gray-400 hover:text-white transition-colors">Equipo</a></li>
+                        <li><a href="index.html#casos-exito" class="text-gray-400 hover:text-white transition-colors">Casos de Éxito</a></li>
+                        <li><a href="index.html#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Servicios</h4>
+                    <ul class="space-y-2">
+                        <li><a href="consultoria.html" class="text-gray-400 hover:text-white transition-colors">Consultoría Organizacional</a></li>
+                        <li><a href="formacion.html" class="text-gray-400 hover:text-white transition-colors">Formación a Medida</a></li>
+                        <li><a href="coaching.html" class="text-gray-400 hover:text-white transition-colors">Coaching Ejecutivo</a></li>
+                        <li><a href="evaluacion.html" class="text-gray-400 hover:text-white transition-colors">Evaluación de Talento</a></li>
+                        <li><a href="cuerpos-especiales.html" class="text-gray-400 hover:text-white transition-colors">Cuerpos Especiales</a></li>
+                    </ul>
+                    </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1.5"></i>
+                            <span>Av. Meritxell, núm. 62, 4t pis<br>AD500 Andorra la Vella</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone"></i>
+                            <span>+376 806 270</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:opcio@opcio-rrhh.com" class="hover:text-white transition-colors">opcio@opcio-rrhh.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>&copy; 2025 OPCIO Group. Todos los derechos reservados.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Términos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Slow down hero video playback
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroVideo = document.querySelector('section video');
+            if (heroVideo) {
+                heroVideo.playbackRate = 0.75; // 75% of normal speed
+            }
+        });
+    </script>
+</body>
+</html> 

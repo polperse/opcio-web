@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría Organizacional - Tu Partner en RRHH | OPCIO Group</title>
+    <meta name="description" content="Queremos ser tus partners en RRHH. Análisis sistémico, cultura organizativa, gestión del talento y salud relacional.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script>
+      window.tailwind = window.tailwind || {};
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#5881C6',
+              'secondary': '#95A1B8',
+              'accent': '#A4C3D9',
+              'neutral': '#334056',
+              'support': '#CCD6EB',
+            },
+            fontFamily: {
+              'display': ['Montserrat', 'sans-serif'],
+              'body': ['Inter', 'sans-serif'],
+            }
+          }
+        },
+        corePlugins: {
+          preflight: false
+        }
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    
+    <!-- VanillaTilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" defer></script>
+    
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body bg-white text-neutral">
+    <!-- Header -->
+    <header class="header-v2">
+        <div class="nav-container-v2">
+            <a href="index.html" class="nav-logo-link">
+                <img src="images/opcio-logo.svg" alt="OPCIO Group" class="logo-light" style="height: 50px;">
+                <img src="images/opcio-logo.svg" alt="OPCIO Group" class="logo-dark" style="height: 50px;">
+            </a>
+            
+            <nav class="nav-main">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#servicios" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="consultoria.html" class="active">Consultoría Organizacional</a></li>
+                            <li><a href="formacion.html">Formación a Medida</a></li>
+                            <li><a href="coaching.html">Coaching y Acompañamiento</a></li>
+                            <li><a href="evaluacion.html">Evaluación de Talento</a></li>
+                            <li><a href="cuerpos-especiales.html">Cuerpos Especiales</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="index.html#equipo" class="nav-link">Equipo</a></li>
+                    <li><a href="index.html#casos-exito" class="nav-link">Casos de Éxito</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="index.html#contacto" class="btn cta-header-btn">
+                    <span>Reserva una sesión</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="nav-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Video -->
+        <div class="absolute inset-0">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover" style="filter: brightness(0.6) saturate(0.8) sepia(0.3) hue-rotate(180deg);">
+                <source src="videos/teamwork-video.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-blue-700/40"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-8" data-aos="fade-down">
+                    <span class="text-white font-display font-semibold text-sm tracking-wide">Consultoría Organizacional</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-8 leading-tight" data-aos="fade-up">
+                    ¿Tu organización no funciona <span class="text-accent">como un sistema</span>?
+                </h1>
+                
+                <p class="text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto font-light" data-aos="fade-up" data-aos-delay="100">
+                    Cultura, procesos, personas y estructura desconectados. Necesitas una visión sistémica y un partner que entienda todo el ecosistema.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#solucion" class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary font-display font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg">
+                        <span>Descubre cómo</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-neutral mb-6">
+                        La complejidad organizacional actual
+                    </h2>
+                    <p class="text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
+                        Cambiar un elemento sin considerar el sistema completo genera más problemas que soluciones
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-puzzle-piece text-red-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Elementos desconectados</h3>
+                        <p class="text-secondary leading-relaxed text-lg">Cultura, procesos y personas trabajando en silos sin visión de conjunto</p>
+                    </div>
+
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-exclamation-circle text-orange-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Cambios que no funcionan</h3>
+                        <p class="text-secondary leading-relaxed text-lg">Iniciativas que fracasan porque no consideran el impacto sistémico</p>
+                    </div>
+
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-20 h-20 bg-yellow-50 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-user-slash text-yellow-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Talento desaprovechado</h3>
+                        <p class="text-secondary leading-relaxed text-lg">Sin foco en la experiencia del profesional ni gestión estratégica del talento</p>
+                    </div>
+
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-20 h-20 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-link-slash text-purple-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Salud relacional pobre</h3>
+                        <p class="text-secondary leading-relaxed text-lg">Relaciones disfuncionales que frenan la agilidad y rentabilidad</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insight -->
+    <section class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                <div class="bg-primary/5 border-l-4 border-primary p-10 rounded-2xl">
+                    <p class="text-2xl text-neutral leading-relaxed">
+                        <strong class="font-display">Creemos y defendemos la salud relacional</strong> dentro de la empresa como una de las bases para potenciar la agilidad y rentabilidad organizacional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section id="solucion" class="py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <div class="inline-block bg-primary/10 px-6 py-3 rounded-full mb-6">
+                        <span class="text-primary font-display font-semibold">La Solución</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-neutral mb-6">
+                        Tu <span class="text-primary">partner estratégico</span> en RRHH
+                    </h2>
+                    <p class="text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
+                        Acompañamos desde una perspectiva sistémica, abordando todos los elementos que conforman tu organización
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                    <div data-aos="fade-right">
+                        <h3 class="text-3xl font-display font-bold text-neutral mb-10">Nuestro enfoque sistémico</h3>
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-6">
+                                <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-search text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-neutral mb-2 text-xl">Análisis y diagnóstico</h4>
+                                    <p class="text-secondary text-lg leading-relaxed">De personas, procesos, cultura, servicios y estructura organizacional</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-6">
+                                <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-lightbulb text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-neutral mb-2 text-xl">Soluciones personalizadas</h4>
+                                    <p class="text-secondary text-lg leading-relaxed">Innovadoras, digitalizadas y adaptadas a tu realidad específica</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-6">
+                                <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-hands-helping text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-neutral mb-2 text-xl">Acompañamiento en el cambio</h4>
+                                    <p class="text-secondary text-lg leading-relaxed">Guiamos a los agentes del cambio en la implementación exitosa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-left">
+                        <div class="bg-gradient-to-br from-primary/5 to-accent/10 p-12 rounded-3xl">
+                            <h3 class="text-2xl font-display font-bold text-neutral mb-8 text-center">Áreas de intervención</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4 bg-white p-4 rounded-xl">
+                                    <i class="fas fa-heart text-primary text-2xl"></i>
+                                    <span class="text-neutral font-medium">Cultura organizativa</span>
+                                </div>
+                                <div class="flex items-center gap-4 bg-white p-4 rounded-xl">
+                                    <i class="fas fa-sitemap text-primary text-2xl"></i>
+                                    <span class="text-neutral font-medium">Estructura y plantilla</span>
+                                </div>
+                                <div class="flex items-center gap-4 bg-white p-4 rounded-xl">
+                                    <i class="fas fa-balance-scale text-primary text-2xl"></i>
+                                    <span class="text-neutral font-medium">Compensación equitativa</span>
+                                </div>
+                                <div class="flex items-center gap-4 bg-white p-4 rounded-xl">
+                                    <i class="fas fa-cogs text-primary text-2xl"></i>
+                                    <span class="text-neutral font-medium">Redefinición de procesos</span>
+                                </div>
+                                <div class="flex items-center gap-4 bg-white p-4 rounded-xl">
+                                    <i class="fas fa-venus-mars text-primary text-2xl"></i>
+                                    <span class="text-neutral font-medium">Igualdad y diversidad</span>
+                                </div>
+                                <div class="flex items-center gap-4 bg-white p-4 rounded-xl">
+                                    <i class="fas fa-gem text-primary text-2xl"></i>
+                                    <span class="text-neutral font-medium">Gestión del talento</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Services -->
+    <section class="py-32 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-neutral mb-6">
+                        Servicios de consultoría
+                    </h2>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <!-- Cultura -->
+                    <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mb-8">
+                            <i class="fas fa-seedling text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-6">Transformación cultural</h3>
+                        <p class="text-secondary text-lg leading-relaxed mb-6">
+                            Rediseñamos la cultura organizativa para alinearla con los objetivos estratégicos.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle text-primary text-xs mt-2"></i>
+                                <span class="text-neutral">Diagnóstico cultural</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle text-primary text-xs mt-2"></i>
+                                <span class="text-neutral">Plan de transformación</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle text-primary text-xs mt-2"></i>
+                                <span class="text-neutral">Gestión del cambio</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Procesos -->
+                    <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mb-8">
+                            <i class="fas fa-project-diagram text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-6">Optimización de procesos</h3>
+                        <p class="text-secondary text-lg leading-relaxed mb-6">
+                            Redefinimos procesos para maximizar eficiencia y experiencia del colaborador.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle text-primary text-xs mt-2"></i>
+                                <span class="text-neutral">Análisis de flujos</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle text-primary text-xs mt-2"></i>
+                                <span class="text-neutral">Digitalización</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle text-primary text-xs mt-2"></i>
+                                <span class="text-neutral">Mejora continua</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Talento -->
+                    <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mb-8">
+                            <i class="fas fa-star text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-6">Gestión del talento</h3>
+                        <p class="text-secondary text-lg leading-relaxed mb-6">
+                            Foco en la experiencia del profesional y desarrollo estratégico del talento.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle text-primary text-xs mt-2"></i>
+                                <span class="text-neutral">Employee experience</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle text-primary text-xs mt-2"></i>
+                                <span class="text-neutral">Planes de carrera</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-circle text-primary text-xs mt-2"></i>
+                                <span class="text-neutral">Retención de talento</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Relational Health -->
+    <section class="py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-neutral mb-6">
+                        Salud relacional: La base del rendimiento
+                    </h2>
+                    <p class="text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
+                        Las relaciones sanas potencian la agilidad y rentabilidad empresarial
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div data-aos="fade-right">
+                        <div class="bg-primary/5 p-10 rounded-3xl">
+                            <h3 class="text-2xl font-display font-bold text-neutral mb-6">¿Por qué es crítica?</h3>
+                            <div class="space-y-6">
+                                <p class="text-secondary text-lg leading-relaxed">
+                                    La calidad de las relaciones dentro de una organización determina su capacidad de innovar, adaptarse y crecer.
+                                </p>
+                                <p class="text-secondary text-lg leading-relaxed">
+                                    Invertimos tiempo en mejorar la comunicación, construir confianza y crear espacios de colaboración efectiva.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-left">
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-6">
+                                <div class="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-comments text-primary text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-neutral mb-2 text-xl">Comunicación abierta</h4>
+                                    <p class="text-secondary text-lg">Espacios seguros para el diálogo honesto</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-6">
+                                <div class="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-neutral mb-2 text-xl">Confianza mutua</h4>
+                                    <p class="text-secondary text-lg">Base para la colaboración efectiva</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-6">
+                                <div class="flex-shrink-0 w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-rocket text-primary text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-neutral mb-2 text-xl">Agilidad organizacional</h4>
+                                    <p class="text-secondary text-lg">Respuesta rápida a los cambios del mercado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32" style="background: linear-gradient(135deg, #5881C6 0%, #A4C3D9 100%);">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-display font-bold text-white mb-8" data-aos="fade-up">
+                    Transforma tu organización de forma sistémica
+                </h2>
+                <p class="text-2xl text-white/90 mb-12 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                    Encuentra en OPCIO el partner estratégico que tu organización necesita
+                </p>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <a href="index.html#contacto" class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary font-display font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg">
+                        <span>Solicitar diagnóstico</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white" style="background-color: #334056;">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="md:col-span-1 space-y-4">
+                    <img src="images/opcio-logo-1color.svg" alt="OPCIO Group Logo" class="h-12 mb-4 brightness-0 invert">
+                    <p class="text-gray-400">Transformando el potencial en rendimiento desde 1995.</p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Navegación</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="index.html#servicios" class="text-gray-400 hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="index.html#metodo" class="text-gray-400 hover:text-white transition-colors">Método</a></li>
+                        <li><a href="index.html#nosotros" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="index.html#equipo" class="text-gray-400 hover:text-white transition-colors">Equipo</a></li>
+                        <li><a href="index.html#casos-exito" class="text-gray-400 hover:text-white transition-colors">Casos de Éxito</a></li>
+                        <li><a href="index.html#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Servicios</h4>
+                    <ul class="space-y-2">
+                        <li><a href="consultoria.html" class="text-gray-400 hover:text-white transition-colors">Consultoría Organizacional</a></li>
+                        <li><a href="formacion.html" class="text-gray-400 hover:text-white transition-colors">Formación a Medida</a></li>
+                        <li><a href="coaching.html" class="text-gray-400 hover:text-white transition-colors">Coaching y Acompañamiento</a></li>
+                        <li><a href="evaluacion.html" class="text-gray-400 hover:text-white transition-colors">Evaluación de Talento</a></li>
+                        <li><a href="cuerpos-especiales.html" class="text-gray-400 hover:text-white transition-colors">Cuerpos Especiales</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1.5"></i><span>Av. Meritxell, núm. 62, 4t pis<br>AD500 Andorra la Vella</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone"></i><span>+376 806 270</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope"></i><a href="mailto:opcio@opcio-rrhh.com" class="text-gray-400 hover:text-white transition-colors">opcio@opcio-rrhh.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>&copy; 2025 OPCIO Group. Todos los derechos reservados.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Términos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 100
+                });
+            }
+
+            // Slow down hero video playback
+            const heroVideo = document.querySelector('section video');
+            if (heroVideo) {
+                heroVideo.playbackRate = 0.75; // 75% of normal speed
+            }
+        });
+    </script>
+</body>
+</html>

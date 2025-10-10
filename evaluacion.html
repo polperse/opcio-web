@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Talento - Decisiones Basadas en Evidencia | OPCIO Group</title>
+    <meta name="description" content="Herramientas científicas para tomar decisiones objetivas sobre talento. DISC, Bridge, Sikkhona, Gallup. El autoconocimiento es poder.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script>
+      window.tailwind = window.tailwind || {};
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#5881C6',
+              'secondary': '#95A1B8',
+              'accent': '#A4C3D9',
+              'neutral': '#334056',
+              'support': '#CCD6EB',
+            },
+            fontFamily: {
+              'display': ['Montserrat', 'sans-serif'],
+              'body': ['Inter', 'sans-serif'],
+            }
+          }
+        },
+        corePlugins: {
+          preflight: false
+        }
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    
+    <!-- VanillaTilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js" defer></script>
+    
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body bg-white text-neutral">
+    <!-- Header -->
+    <header class="header-v2">
+        <div class="nav-container-v2">
+            <a href="index.html" class="nav-logo-link">
+                <img src="images/opcio-logo.svg" alt="OPCIO Group" class="logo-light" style="height: 50px;">
+                <img src="images/opcio-logo.svg" alt="OPCIO Group" class="logo-dark" style="height: 50px;">
+            </a>
+            
+            <nav class="nav-main">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#servicios" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="consultoria.html">Consultoría Organizacional</a></li>
+                            <li><a href="formacion.html">Formación a Medida</a></li>
+                            <li><a href="coaching.html">Coaching y Acompañamiento</a></li>
+                            <li><a href="evaluacion.html" class="active">Evaluación de Talento</a></li>
+                            <li><a href="cuerpos-especiales.html">Cuerpos Especiales</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="index.html#equipo" class="nav-link">Equipo</a></li>
+                    <li><a href="index.html#casos-exito" class="nav-link">Casos de Éxito</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="index.html#contacto" class="btn cta-header-btn">
+                    <span>Reserva una sesión</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="nav-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Video -->
+        <div class="absolute inset-0">
+            <video autoplay muted playsinline class="w-full h-full object-cover" style="filter: brightness(0.6) saturate(0.8) sepia(0.3) hue-rotate(180deg);">
+                <source src="videos/andorra.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-blue-700/40"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-8" data-aos="fade-down">
+                    <span class="text-white font-display font-semibold text-sm tracking-wide">Evaluación de Talento</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-8 leading-tight" data-aos="fade-up">
+                    ¿Tomas decisiones de talento <span class="text-accent">sin datos objetivos</span>?
+                </h1>
+                
+                <p class="text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto font-light" data-aos="fade-up" data-aos-delay="100">
+                    Contratar, promover o desarrollar personas basándose solo en intuición es arriesgado. Descubre el verdadero potencial con herramientas científicas validadas.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#solucion" class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary font-display font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg">
+                        <span>Ver cómo funciona</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-neutral mb-6">
+                        El costo de no saber
+                    </h2>
+                    <p class="text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
+                        Cada decisión sin fundamento objetivo puede costar miles en tiempo, dinero y oportunidades perdidas
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-exclamation-triangle text-red-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Contrataciones erróneas</h3>
+                        <p class="text-secondary leading-relaxed text-lg">Una mala contratación puede costar hasta 3 veces el salario anual del puesto</p>
+                    </div>
+
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 h-20 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-users-slash text-orange-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Talento desperdiciado</h3>
+                        <p class="text-secondary leading-relaxed text-lg">Personas en roles inadecuados generan frustración y baja productividad</p>
+                    </div>
+
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-20 h-20 bg-yellow-50 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-chart-line-down text-yellow-500 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Equipos disfuncionales</h3>
+                        <p class="text-secondary leading-relaxed text-lg">Sin conocer los perfiles reales, los conflictos son inevitables</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <i class="fas fa-quote-left text-primary text-4xl mb-8 opacity-20"></i>
+                <p class="text-3xl font-display text-neutral mb-8 leading-relaxed">
+                    "Aquel que conoce y domina a los otros es fuerte, quien se conoce y se domina a sí mismo es poderoso."
+                </p>
+                <p class="text-primary font-semibold text-xl">— Lao Tse</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solucion" class="py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <div class="inline-block bg-primary/10 px-6 py-3 rounded-full mb-6">
+                        <span class="text-primary font-display font-semibold">La Solución</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-neutral mb-6">
+                        Decisiones basadas en <span class="text-primary">evidencia científica</span>
+                    </h2>
+                    <p class="text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
+                        Herramientas psicométricas validadas que transforman percepciones subjetivas en datos objetivos
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div data-aos="fade-right">
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="text-center p-8 bg-primary/5 rounded-2xl">
+                                <div class="text-5xl font-display font-bold text-primary mb-3">100%</div>
+                                <div class="text-neutral font-medium">Acompañamiento</div>
+                            </div>
+                            <div class="text-center p-8 bg-primary/5 rounded-2xl">
+                                <div class="text-5xl font-display font-bold text-primary mb-3">85%</div>
+                                <div class="text-neutral font-medium">Autoconocimiento</div>
+                            </div>
+                            <div class="text-center p-8 bg-primary/5 rounded-2xl">
+                                <div class="text-5xl font-display font-bold text-primary mb-3">90%</div>
+                                <div class="text-neutral font-medium">Maximizar potencial</div>
+                            </div>
+                            <div class="text-center p-8 bg-primary/5 rounded-2xl">
+                                <div class="text-5xl font-display font-bold text-primary mb-3">28+</div>
+                                <div class="text-neutral font-medium">Años experiencia</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-left">
+                        <h3 class="text-3xl font-display font-bold text-neutral mb-10">Beneficios inmediatos</h3>
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-6">
+                                <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-check text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-neutral mb-2 text-xl">Para la empresa</h4>
+                                    <p class="text-secondary text-lg leading-relaxed">Conocimiento objetivo del valor que cada profesional puede aportar</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-6">
+                                <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-check text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-neutral mb-2 text-xl">Para la persona</h4>
+                                    <p class="text-secondary text-lg leading-relaxed">Autoconocimiento como punto de partida del autoliderazgo</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-6">
+                                <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-check text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-neutral mb-2 text-xl">Decisiones informadas</h4>
+                                    <p class="text-secondary text-lg leading-relaxed">Reduce riesgos y maximiza el ROI de cada decisión</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="py-32 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-neutral mb-6">
+                        Herramientas validadas científicamente
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- DISC -->
+                    <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center gap-5 mb-6">
+                            <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-chart-pie text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-display font-bold text-neutral">DISC</h3>
+                                <p class="text-primary font-semibold">Comportamiento laboral</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary text-lg leading-relaxed">
+                            Describe detalladamente el comportamiento habitual y potencial de la persona en su entorno laboral.
+                        </p>
+                    </div>
+
+                    <!-- Gallup -->
+                    <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center gap-5 mb-6">
+                            <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-star text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-display font-bold text-neutral">CliftonStrengths</h3>
+                                <p class="text-primary font-semibold">Fortalezas naturales</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary text-lg leading-relaxed">
+                            Identifica los 34 temas de talento para maximizar el potencial único de cada persona.
+                        </p>
+                    </div>
+
+                    <!-- Bridge -->
+                    <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center gap-5 mb-6">
+                            <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-comments text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-display font-bold text-neutral">Bridge</h3>
+                                <p class="text-primary font-semibold">Estilos relacionales</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary text-lg leading-relaxed">
+                            Descubre los estilos de comunicación para facilitar relaciones interpersonales efectivas.
+                        </p>
+                    </div>
+
+                    <!-- Sikkhona -->
+                    <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex items-center gap-5 mb-6">
+                            <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-users text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-display font-bold text-neutral">Sikkhona</h3>
+                                <p class="text-primary font-semibold">Dinámicas de equipo</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary text-lg leading-relaxed">
+                            Diagnostica la etapa del equipo y propone acciones para ganar cohesión y confianza.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center" data-aos="fade-up">
+                    <p class="text-secondary text-lg">También trabajamos con: <span class="font-semibold text-neutral">Talent Suite, Pruebas Psicotécnicas y Evaluaciones a medida</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-neutral mb-6">
+                        Proceso simple y efectivo
+                    </h2>
+                    <p class="text-xl text-secondary max-w-2xl mx-auto">
+                        En 4 pasos obtendrás insights accionables
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-12">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-24 h-24 bg-primary text-white rounded-3xl flex items-center justify-center text-4xl font-display font-bold mx-auto mb-6">1</div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Análisis</h3>
+                        <p class="text-secondary text-lg leading-relaxed">Identificamos objetivos y herramientas</p>
+                    </div>
+
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-24 h-24 bg-primary text-white rounded-3xl flex items-center justify-center text-4xl font-display font-bold mx-auto mb-6">2</div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Aplicación</h3>
+                        <p class="text-secondary text-lg leading-relaxed">Administramos con rigor profesional</p>
+                    </div>
+
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-24 h-24 bg-primary text-white rounded-3xl flex items-center justify-center text-4xl font-display font-bold mx-auto mb-6">3</div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Interpretación</h3>
+                        <p class="text-secondary text-lg leading-relaxed">Informes claros y accionables</p>
+                    </div>
+
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-24 h-24 bg-primary text-white rounded-3xl flex items-center justify-center text-4xl font-display font-bold mx-auto mb-6">4</div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Acompañamiento</h3>
+                        <p class="text-secondary text-lg leading-relaxed">Guiamos la implementación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32" style="background: linear-gradient(135deg, #5881C6 0%, #A4C3D9 100%);">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-display font-bold text-white mb-8" data-aos="fade-up">
+                    Deja de adivinar. Empieza a saber.
+                </h2>
+                <p class="text-2xl text-white/90 mb-12 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                    Transforma tus decisiones de talento con datos objetivos
+                </p>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <a href="index.html#contacto" class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary font-display font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg">
+                        <span>Solicitar evaluación gratuita</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white" style="background-color: #334056;">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="md:col-span-1 space-y-4">
+                    <img src="images/opcio-logo-1color.svg" alt="OPCIO Group Logo" class="h-12 mb-4 brightness-0 invert">
+                    <p class="text-gray-400">Transformando el potencial en rendimiento desde 1995.</p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Navegación</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="index.html#servicios" class="text-gray-400 hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="index.html#metodo" class="text-gray-400 hover:text-white transition-colors">Método</a></li>
+                        <li><a href="index.html#nosotros" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="index.html#equipo" class="text-gray-400 hover:text-white transition-colors">Equipo</a></li>
+                        <li><a href="index.html#casos-exito" class="text-gray-400 hover:text-white transition-colors">Casos de Éxito</a></li>
+                        <li><a href="index.html#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Servicios</h4>
+                    <ul class="space-y-2">
+                        <li><a href="consultoria.html" class="text-gray-400 hover:text-white transition-colors">Consultoría Organizacional</a></li>
+                        <li><a href="formacion.html" class="text-gray-400 hover:text-white transition-colors">Formación a Medida</a></li>
+                        <li><a href="coaching.html" class="text-gray-400 hover:text-white transition-colors">Coaching y Acompañamiento</a></li>
+                        <li><a href="evaluacion.html" class="text-gray-400 hover:text-white transition-colors">Evaluación de Talento</a></li>
+                        <li><a href="cuerpos-especiales.html" class="text-gray-400 hover:text-white transition-colors">Cuerpos Especiales</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 tracking-wide text-white">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1.5"></i><span>Av. Meritxell, núm. 62, 4t pis<br>AD500 Andorra la Vella</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone"></i><span>+376 806 270</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope"></i><a href="mailto:opcio@opcio-rrhh.com" class="text-gray-400 hover:text-white transition-colors">opcio@opcio-rrhh.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>&copy; 2025 OPCIO Group. Todos los derechos reservados.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-white transition-colors">Política de Privacidad</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Términos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 100
+                });
+            }
+
+            // Slow down hero video playback and stop at last frame
+            const heroVideo = document.querySelector('section video');
+            if (heroVideo) {
+                heroVideo.playbackRate = 0.75; // 75% of normal speed
+                // Video will automatically stop at the last frame since loop is removed
+            }
+        });
+    </script>
+</body>
+</html>

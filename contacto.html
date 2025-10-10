@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - OPCIO Group | Solicita tu Consulta Gratuita</title>
+    <meta name="description" content="Contacta con OPCIO Group para transformar tu organización. Consulta gratuita, sesiones exploratorias y soluciones personalizadas en recursos humanos.">
+    <meta name="keywords" content="contacto OPCIO Group, consulta gratuita, sesión exploratoria, consultoría recursos humanos, Andorra">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Header V2 -->
+    <header class="header-v2">
+        <div class="nav-container-v2">
+            <a href="index.html" class="nav-logo-link">
+                <img src="images/logo-opcio.svg" alt="OPCIO Group" class="logo-light">
+                <img src="images/logo-opcio-dark.svg" alt="OPCIO Group" class="logo-dark">
+            </a>
+            
+            <nav class="nav-main">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#servicios" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="consultoria.html">Consultoría Organizacional</a></li>
+                            <li><a href="formacion.html">Formación a Medida</a></li>
+                            <li><a href="coaching.html">Coaching Ejecutivo</a></li>
+                            <li><a href="evaluacion.html">Evaluación de Talento</a></li>
+                            <li><a href="cuerpos-especiales.html">Cuerpos Especiales</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a></li>
+                    <li><a href="recursos.html" class="nav-link">Recursos</a></li>
+                    <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="contacto.html" class="btn cta-header-btn">
+                    <span>Reserva una sesión</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="nav-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a> > <span>Contacto</span>
+            </div>
+            <h1 class="page-title">Hablemos de tu proyecto</h1>
+            <p class="page-subtitle">Estamos aquí para ayudarte a transformar tu organización. Solicita una consulta gratuita y descubre cómo podemos trabajar juntos.</p>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+        <div class="container">
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Sesión Exploratoria</h3>
+                    <p>Reserva una sesión de 30 minutos para conocernos y explorar cómo podemos ayudarte</p>
+                    <a href="#scheduling" class="method-btn">Reservar ahora</a>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Llamada Directa</h3>
+                    <p>Habla directamente con nuestro equipo para resolver tus dudas inmediatamente</p>
+                    <a href="tel:+376XXXXXX" class="method-btn">+376 XXX XXX</a>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Envíanos un email detallado con tu consulta y te responderemos en menos de 24 horas</p>
+                    <a href="mailto:info@opciogroup.com" class="method-btn">info@opciogroup.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Form -->
+    <section class="main-contact-form">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form-section">
+                    <h2>Cuéntanos sobre tu proyecto</h2>
+                    <p>Completa el formulario y te contactaremos para programar una consulta personalizada</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nombre completo *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Empresa</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="position">Cargo</label>
+                                <input type="text" id="position" name="position">
+                            </div>
+                            <div class="form-group">
+                                <label for="company-size">Tamaño de la empresa</label>
+                                <select id="company-size" name="company-size">
+                                    <option value="">Selecciona...</option>
+                                    <option value="1-10">1-10 empleados</option>
+                                    <option value="11-50">11-50 empleados</option>
+                                    <option value="51-200">51-200 empleados</option>
+                                    <option value="201-500">201-500 empleados</option>
+                                    <option value="500+">Más de 500 empleados</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Servicio de interés</label>
+                            <select id="service" name="service">
+                                <option value="">Selecciona un servicio...</option>
+                                <option value="consultoria">Consultoría Organizacional</option>
+                                <option value="formacion">Formación a Medida</option>
+                                <option value="coaching">Coaching Ejecutivo</option>
+                                <option value="evaluacion">Evaluación de Talento</option>
+                                <option value="cuerpos-especiales">Cuerpos Especiales</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Cuéntanos sobre tu proyecto, desafíos o necesidades..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="timeline">¿Cuándo te gustaría empezar?</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Selecciona...</option>
+                                <option value="inmediato">Inmediatamente</option>
+                                <option value="1-mes">En el próximo mes</option>
+                                <option value="2-3-meses">En 2-3 meses</option>
+                                <option value="6-meses">En 6 meses</option>
+                                <option value="explorando">Solo estoy explorando</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Presupuesto estimado</label>
+                            <select id="budget" name="budget">
+                                <option value="">Selecciona...</option>
+                                <option value="5000">Menos de 5.000€</option>
+                                <option value="5000-15000">5.000€ - 15.000€</option>
+                                <option value="15000-50000">15.000€ - 50.000€</option>
+                                <option value="50000+">Más de 50.000€</option>
+                                <option value="por-definir">Por definir</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox">
+                                <input type="checkbox" name="newsletter" value="1">
+                                <span class="checkmark"></span>
+                                Quiero recibir información sobre recursos gratuitos y novedades de OPCIO Group
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox">
+                                <input type="checkbox" name="privacy" required>
+                                <span class="checkmark"></span>
+                                Acepto la <a href="privacy.html" target="_blank">política de privacidad</a> y el tratamiento de mis datos *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn primary full-width">Enviar mensaje</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info-section">
+                    <div class="info-card">
+                        <h3>Información de contacto</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Dirección</strong>
+                                <p>Andorra la Vella, Principado de Andorra</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <p>+376 XXX XXX</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>info@opciogroup.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horario</strong>
+                                <p>Lunes a Viernes: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Síguenos</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>¿Por qué elegirnos?</h3>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> Casi 30 años de experiencia</li>
+                            <li><i class="fas fa-check"></i> Enfoque ético y personalizado</li>
+                            <li><i class="fas fa-check"></i> Metodologías científicamente respaldadas</li>
+                            <li><i class="fas fa-check"></i> Resultados medibles y sostenibles</li>
+                            <li><i class="fas fa-check"></i> Equipo multidisciplinario</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scheduling Section -->
+    <section class="scheduling-section" id="scheduling">
+        <div class="container">
+            <div class="scheduling-content">
+                <div class="scheduling-text">
+                    <h2>Reserva tu sesión exploratoria</h2>
+                    <p>Una conversación de 30 minutos para conocernos mejor y explorar cómo podemos ayudarte a alcanzar tus objetivos organizacionales.</p>
+                    
+                    <div class="scheduling-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-gift"></i>
+                            <div>
+                                <h4>Completamente gratuita</h4>
+                                <p>Sin compromiso ni costo alguno</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>30 minutos</h4>
+                                <p>Tiempo suficiente para conocernos</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-video"></i>
+                            <div>
+                                <h4>Online o presencial</h4>
+                                <p>Según tu preferencia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scheduling-form">
+                    <div class="calendar-embed">
+                        <!-- Aquí iría el widget de calendly o similar -->
+                        <div class="calendar-placeholder">
+                            <h3>Selecciona tu horario preferido</h3>
+                            <p>Elige el día y hora que mejor se adapte a tu agenda</p>
+                            <button class="btn primary">Abrir calendario</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuánto tiempo toma obtener una respuesta?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nos comprometemos a responder todas las consultas en menos de 24 horas laborables. Para casos urgentes, no dudes en llamarnos directamente.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿La consulta inicial tiene algún costo?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, la sesión exploratoria inicial es completamente gratuita y sin compromiso. Es una oportunidad para conocernos mutuamente y evaluar si somos el partner adecuado para tu proyecto.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Trabajáis con empresas fuera de Andorra?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, trabajamos con empresas en España (País Vasco, Cataluña, Galicia) y estamos expandiendo nuestros servicios a otros mercados internacionales.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué tipo de proyectos no aceptáis?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No aceptamos proyectos donde se nos pida hacer "el trabajo sucio" o aplicar normativas de forma coercitiva. Creemos en la madurez y responsabilidad de las personas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo garantizáis la confidencialidad?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Todos nuestros proyectos están protegidos por acuerdos de confidencialidad. Respetamos escrupulosamente la privacidad de nuestros clientes y nunca compartimos información sensible.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Ofrecéis servicios en diferentes idiomas?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, ofrecemos nuestros servicios en catalán, español, inglés y francés, adaptándonos a las necesidades específicas de cada cliente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Nuestra ubicación</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <!-- Aquí iría Google Maps o similar -->
+                    <div class="map-info">
+                        <h3>OPCIO Group</h3>
+                        <p>Andorra la Vella, Principado de Andorra</p>
+                        <button class="btn secondary">Ver en Google Maps</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo-opcio-white.svg" alt="OPCIO Group">
+                    </div>
+                    <p>Transformamos el potencial en rendimiento desde 1995. Consultoría y formación basadas en la psicología, la ética y la co-creación.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="consultoria.html">Consultoría Organizacional</a></li>
+                        <li><a href="formacion.html">Formación a Medida</a></li>
+                        <li><a href="coaching.html">Coaching Ejecutivo</a></li>
+                        <li><a href="evaluacion.html">Evaluación de Talento</a></li>
+                        <li><a href="cuerpos-especiales.html">Cuerpos Especiales</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="equipo.html">Nuestro Equipo</a></li>
+                        <li><a href="casos-exito.html">Casos de Éxito</a></li>
+                        <li><a href="carreras.html">Carreras</a></li>
+                        <li><a href="prensa.html">Prensa y Media</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="biblioteca.html">Biblioteca</a></li>
+                        <li><a href="webinars.html">Webinars</a></li>
+                        <li><a href="guias.html">Guías Gratuitas</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Andorra la Vella, Principado de Andorra</p>
+                        <p><i class="fas fa-phone"></i> +376 XXX XXX</p>
+                        <p><i class="fas fa-envelope"></i> info@opciogroup.com</p>
+                    </div>
+                    <div class="certifications">
+                        <img src="images/cambra-comerç.png" alt="Cambra de Comerç" class="cert-logo">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 OPCIO Group. Todos los derechos reservados.</p>
+                    <div class="footer-links">
+                        <a href="privacy.html">Política de Privacidad</a>
+                        <a href="terms.html">Términos y Condiciones</a>
+                        <a href="cookies.html">Política de Cookies</a>
+                    </div>
+                    <div class="language-selector-footer">
+                        <button class="lang-btn active" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="ca">CAT</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="fr">FR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html> 
