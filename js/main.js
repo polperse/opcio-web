@@ -548,6 +548,9 @@ function initializeVideoControls() {
     const videos = document.querySelectorAll('video');
     
     videos.forEach(video => {
+        // Check if video is inside a service card
+        const isServiceCard = video.closest('.services-section a');
+        
         // Optimize video loading
         video.addEventListener('loadstart', () => {
             video.classList.add('loading');
@@ -558,20 +561,38 @@ function initializeVideoControls() {
             video.classList.add('loaded');
         });
         
-        // Pause videos when not in view for performance
-        const videoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.play().catch(console.log);
-                } else {
-                    entry.target.pause();
-                }
+        if (isServiceCard) {
+            // Service card videos: play on hover only
+            video.pause(); // Start paused
+            video.currentTime = 0; // Reset to beginning
+            
+            const card = video.closest('a');
+            
+            card.addEventListener('mouseenter', () => {
+                video.play().catch(console.log);
             });
-        }, {
-            threshold: 0.25
-        });
-        
-        videoObserver.observe(video);
+            
+            card.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0; // Reset to beginning when mouse leaves
+            });
+            
+        } else {
+            // Hero and other videos: autoplay when in view
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.play().catch(console.log);
+                    } else {
+                        entry.target.pause();
+                    }
+                });
+            }, {
+                threshold: 0.25
+            });
+            
+            videoObserver.observe(video);
+        }
         
         // Handle video errors gracefully
         video.addEventListener('error', () => {
