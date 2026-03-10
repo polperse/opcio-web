@@ -548,10 +548,11 @@ function initializeVideoControls() {
     const videos = document.querySelectorAll('video');
     
     videos.forEach(video => {
-        // Check if video is inside a service card
+        const rate = parseFloat(video.dataset.playbackRate);
+        if (rate) video.playbackRate = rate;
+
         const isServiceCard = video.closest('.services-section a');
-        
-        // Optimize video loading
+
         video.addEventListener('loadstart', () => {
             video.classList.add('loading');
         });
