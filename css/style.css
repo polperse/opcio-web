@@ -457,9 +457,14 @@ body {
     display: none;
     cursor: pointer;
     position: relative;
-    z-index: 1002; /* Above nav menu */
+    z-index: 1002;
     width: 30px;
     height: 22px;
+    background: none;
+    border: none;
+    padding: 0;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .hamburger {
@@ -493,6 +498,17 @@ body {
     transform: translateY(-7px) rotate(-45deg);
 }
 
+.mobile-menu-cta-wrapper {
+    display: none;
+    list-style: none;
+}
+
+@media (max-width: 1200px) {
+    .mobile-menu-cta-wrapper {
+        display: list-item;
+        list-style: none;
+    }
+}
 
 /* Advanced Typography */
 .section-title {
@@ -1745,10 +1761,44 @@ body {
     }
     
     .header-v2 .nav-menu .nav-link {
+        color: var(--text-dark) !important;
         font-size: var(--font-size-2xl);
         margin: 1rem 0;
     }
-    
+
+    .header-v2 .nav-menu .nav-link:hover {
+        color: var(--primary-color) !important;
+    }
+
+    .header-v2 .nav-menu .nav-link::after {
+        background: var(--primary-color);
+    }
+
+    .nav-toggle.active .hamburger span {
+        background: var(--text-dark) !important;
+    }
+
+    .header-v2 .nav-menu .mobile-menu-cta {
+        display: inline-flex;
+        margin-top: 2rem;
+        background: var(--gradient-primary);
+        color: var(--text-white) !important;
+        padding: 1rem 2.5rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: var(--font-size-lg);
+        text-decoration: none;
+        gap: 0.5rem;
+        align-items: center;
+        box-shadow: var(--shadow-lg);
+        transition: all var(--animation-normal) var(--easing-smooth);
+    }
+
+    .header-v2 .nav-menu .mobile-menu-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-xl);
+    }
+
     .cta-guia-content {
         grid-template-columns: 1fr;
         gap: 60px;
@@ -1769,18 +1819,81 @@ body {
 }
 
 @media (max-width: 768px) {
+    .header-v2 {
+        padding: 0.75rem 0;
+    }
+
+    .nav-container-v2 {
+        padding: 0 1rem;
+        gap: 0.75rem;
+    }
+
+    .nav-logo-link {
+        flex: 0 0 auto;
+    }
+
+    .logo-light,
+    .logo-dark {
+        height: 36px !important;
+    }
+
+    .nav-actions {
+        flex: 1 1 auto;
+        justify-content: flex-end;
+        gap: 0.6rem;
+        min-width: 0;
+    }
+
+    .language-btn {
+        padding: 0.5rem 0.7rem;
+        gap: 0.3rem;
+        font-size: 0.78rem;
+        border-radius: 8px;
+    }
+
+    .btn.cta-header-btn {
+        display: none;
+    }
+
+    .nav-toggle {
+        width: 26px;
+        height: 18px;
+    }
+
+    .hero-parallax .container.mt-24 {
+        margin-top: 1rem;
+    }
+
     .hero-title {
         font-size: var(--font-size-5xl);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-lg);
     }
     
     .hero-actions {
         flex-direction: column;
         gap: 15px;
     }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
     
     .hero-metrics {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .services-section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .services-section h2 {
+        font-size: var(--font-size-4xl);
     }
     
     .services-grid-modern {
@@ -1813,7 +1926,6 @@ body {
         text-align: center;
     }
     
-    /* Disable parallax on mobile for better performance */
     .parallax-image {
         background-attachment: scroll !important;
         transform: none !important;
@@ -1840,9 +1952,32 @@ body {
     .metodo-card {
         margin-bottom: 20px;
     }
+
+    .logo-carousel {
+        height: 4rem;
+    }
+
+    .logo-carousel-track img {
+        height: 2rem !important;
+        margin: 0 1.5rem !important;
+    }
 }
 
 @media (max-width: 480px) {
+    .header-v2 {
+        padding: 0.6rem 0;
+    }
+
+    .logo-light,
+    .logo-dark {
+        height: 32px !important;
+    }
+
+    .language-btn {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
     .hero-title {
         font-size: var(--font-size-4xl);
     }
@@ -2675,70 +2810,7 @@ html {
     box-shadow: var(--shadow-2xl), var(--shadow-glow);
 } 
 
-/* Responsive Design Updates */
-@media (max-width: 1200px) {
-    .hero-title {
-        font-size: var(--font-size-6xl);
-    }
-    
-    .services-grid-modern {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-    
-    .nav-main {
-        position: static;
-        transform: none;
-    }
-    
-    .nav-container-v2 {
-        padding: 0 1.5rem;
-    }
-    
-    .nav-toggle {
-        display: block;
-    }
-    
-    .header-v2 .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background: var(--bg-white);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: right var(--animation-normal) var(--easing-smooth);
-        z-index: 999;
-    }
-    
-    .header-v2 .nav-menu.active {
-        right: 0;
-    }
-    
-    .header-v2 .nav-menu .nav-link {
-        font-size: var(--font-size-2xl);
-        margin: 1rem 0;
-    }
-    
-    .cta-guia-content {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-    
-    .metodo-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .metodo-header .section-title {
-        font-size: var(--font-size-4xl);
-    }
-    
-    .cta-guia-text .section-title {
-        font-size: var(--font-size-4xl);
-    }
-}
+/* Additional responsive rules for secondary page components */
 
 @media (max-width: 768px) {
     .hero-title {
