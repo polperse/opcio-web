@@ -559,7 +559,7 @@
         <div class="container mx-auto px-6 relative">
             <!-- Header -->
             <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
-                <span class="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm font-semibold mb-6" style="color: rgba(51, 64, 86, 0.9);">
+                <span class="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full text-sm font-semibold mb-6" style="color: rgba(51, 64, 86, 0.9);">
                     <i class="fas fa-drafting-compass"></i> El Nostre Mètode
                 </span>
                 <h2 class="text-4xl lg:text-5xl font-display font-extrabold text-neutral leading-tight">Un Procés Centrat en les Persones</h2>
@@ -1077,129 +1077,240 @@
         </div>
     </section>
 
+    <style>
+        .courses-editorial-section {
+            isolation: isolate;
+        }
+        .courses-editorial-section .courses-hero-card,
+        .courses-editorial-section .courses-guide-card,
+        .courses-editorial-section .courses-stage-card,
+        .courses-editorial-section .courses-cta-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(204, 214, 235, 0.9);
+            box-shadow: 0 20px 50px -30px rgba(51, 64, 86, 0.25);
+            overflow: hidden;
+        }
+        .courses-editorial-section .courses-hero-card::before,
+        .courses-editorial-section .courses-guide-card::before,
+        .courses-editorial-section .courses-stage-card::before,
+        .courses-editorial-section .courses-cta-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.45), rgba(255,255,255,0.08));
+            pointer-events: none;
+        }
+        .courses-editorial-section .courses-stage {
+            position: relative;
+        }
+        .courses-editorial-section .courses-stage::before {
+            content: '';
+            position: absolute;
+            left: calc(33.333% - 18px);
+            top: 2rem;
+            bottom: 2rem;
+            width: 1px;
+            background: linear-gradient(180deg, rgba(88,129,198,0), rgba(88,129,198,0.28), rgba(88,129,198,0));
+            display: none;
+        }
+        .courses-editorial-section .courses-stage-card {
+            border-radius: 32px;
+            padding: 2rem;
+        }
+        .courses-editorial-section .courses-stage-card::after {
+            content: '';
+            position: absolute;
+            inset: auto -20% -35% auto;
+            width: 220px;
+            height: 220px;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(88,129,198,0.14) 0%, rgba(88,129,198,0) 72%);
+            pointer-events: none;
+        }
+        .courses-editorial-section .courses-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: rgba(88,129,198,0.95);
+        }
+        .courses-editorial-section .courses-kicker::before {
+            content: '';
+            width: 42px;
+            height: 1px;
+            background: rgba(88,129,198,0.45);
+        }
+        .courses-editorial-section .courses-guide-item {
+            border-radius: 22px;
+            background: rgba(88,129,198,0.05);
+            border: 1px solid rgba(88,129,198,0.12);
+            padding: 1rem 1.1rem;
+        }
+        @media (min-width: 1024px) {
+            .courses-editorial-section .courses-stage::before {
+                display: block;
+            }
+        }
+    </style>
     <!-- Courses Section -->
-    <section class="py-20 bg-gray-50 relative overflow-hidden" id="cursos">
+    <section class="courses-editorial-section py-24 bg-gray-50 relative overflow-x-hidden" id="cursos">
         <!-- Subtle background image -->
         <div class="absolute inset-0 pointer-events-none">
             <img src="images/canillo.jpg" alt="" class="w-full h-full object-cover object-center opacity-[0.38]">
             <div class="absolute inset-0 bg-white/40"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center max-w-5xl mx-auto mb-16" data-aos="fade-up">
-                <span class="inline-flex items-center gap-2 bg-white/70 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-white/60 shadow-sm" style="color: rgba(51, 64, 86, 0.9);">
-                    <i class="fas fa-chalkboard-teacher"></i> Training i Desenvolupament de Persones
-                </span>
-                <h2 class="text-4xl lg:text-5xl font-display font-extrabold text-neutral leading-tight mb-6">Programes de Desenvolupament</h2>
-                <p class="text-primary text-lg leading-relaxed max-w-3xl mx-auto">
-                    Hem reorganitzat el catàleg perquè sigui més fàcil decidir: cada curs mostra clarament <strong>per a qui és</strong>, <strong>què t'emportes</strong> i el seu <strong>format</strong>.
-                </p>
-            </div>
+            <div class="grid xl:grid-cols-12 gap-8 xl:gap-10 items-start mb-14">
+                <div class="xl:col-span-7" data-aos="fade-up">
+                    <div class="courses-hero-card rounded-[2rem] p-8 lg:p-10">
+                        <div class="relative z-10 text-center xl:text-left max-w-4xl">
+                            <span class="inline-flex items-center gap-2 bg-white/70 px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-white/60 shadow-sm" style="color: rgba(51, 64, 86, 0.9);">
+                                <i class="fas fa-chalkboard-teacher"></i> Training i Desenvolupament de Persones
+                            </span>
+                            <h2 class="text-4xl lg:text-5xl font-display font-extrabold text-neutral leading-tight mb-6">Programes de Desenvolupament</h2>
+                            <p class="text-primary text-lg leading-relaxed max-w-3xl xl:max-w-none mx-auto xl:mx-0">
+                                Hem reorganitzat el catàleg perquè sigui més fàcil decidir: cada curs mostra clarament <strong>per a qui és</strong>, <strong>què t'emportes</strong> i el seu <strong>format</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="bg-white/85 backdrop-blur-sm rounded-3xl border border-support shadow-lg p-6 md:p-8 mb-12" data-aos="fade-up" data-aos-delay="50">
-                <h3 class="text-xl font-display font-bold text-neutral mb-5">Com llegir el catàleg</h3>
-                <div class="grid sm:grid-cols-3 gap-4 text-sm">
-                    <div class="rounded-2xl bg-primary/5 border border-primary/15 p-4">
-                        <p class="font-semibold text-neutral mb-1">1. Tria l'àmbit</p>
-                        <p class="text-secondary">Relacions i cultura, lideratge i benestar, o excel·lència formativa.</p>
-                    </div>
-                    <div class="rounded-2xl bg-primary/5 border border-primary/15 p-4">
-                        <p class="font-semibold text-neutral mb-1">2. Mira les etiquetes</p>
-                        <p class="text-secondary">Públic, modalitat i intensitat per detectar encaix ràpidament.</p>
-                    </div>
-                    <div class="rounded-2xl bg-primary/5 border border-primary/15 p-4">
-                        <p class="font-semibold text-neutral mb-1">3. Valida impacte</p>
-                        <p class="text-secondary">Cada fitxa indica els resultats pràctics esperats per l'equip.</p>
+                <div class="xl:col-span-5" data-aos="fade-up" data-aos-delay="50">
+                    <div class="courses-guide-card rounded-[2rem] p-6 md:p-8">
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-display font-bold text-neutral mb-5">Com llegir el catàleg</h3>
+                            <div class="grid gap-4 text-sm">
+                                <div class="courses-guide-item">
+                                    <p class="font-semibold text-neutral mb-1">1. Tria l'àmbit</p>
+                                    <p class="text-secondary">Relacions i cultura, lideratge i benestar, o excel·lència formativa.</p>
+                                </div>
+                                <div class="courses-guide-item">
+                                    <p class="font-semibold text-neutral mb-1">2. Mira les etiquetes</p>
+                                    <p class="text-secondary">Públic, modalitat i intensitat per detectar encaix ràpidament.</p>
+                                </div>
+                                <div class="courses-guide-item">
+                                    <p class="font-semibold text-neutral mb-1">3. Valida impacte</p>
+                                    <p class="text-secondary">Cada fitxa indica els resultats pràctics esperats per l'equip.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="space-y-14">
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-2xl font-display font-bold text-neutral">Relacions i cultura d'equip</h3>
-                        <span class="text-xs font-semibold uppercase tracking-wide text-primary bg-primary/10 px-3 py-1 rounded-full">2 programes</span>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <article class="course-card">
-                            <div class="course-card-header" style="background: linear-gradient(135deg, #22c55e 0%, #10b981 40%, #34d399 100%)">
-                                <span class="course-badge">Cultura relacional</span>
-                                <div class="course-header-icon"><i class="fas fa-handshake"></i></div>
-                                <h4>Potencia les relacions sanes a la teva empresa</h4>
-                            </div>
-                            <div class="course-card-body">
-                                <div class="course-info-row">
-                                    <div class="course-info-icon ci-primary"><i class="fas fa-user-tie"></i></div>
-                                    <div>
-                                        <span class="course-info-label">Per a qui</span>
-                                        <p class="course-info-text">Equips que necessiten reforçar confiança, coordinació i qualitat de les relacions internes.</p>
+                <div class="courses-stage" data-aos="fade-up" data-aos-delay="100">
+                    <div class="grid lg:grid-cols-12 gap-8 xl:gap-10 items-start">
+                        <div class="lg:col-span-4">
+                            <div class="courses-stage-card lg:sticky lg:top-28">
+                                <div class="relative z-10">
+                                    <span class="courses-kicker mb-5">Bloc 01</span>
+                                    <div class="flex items-center justify-between gap-4 mb-5">
+                                        <h3 class="text-2xl xl:text-3xl font-display font-bold text-neutral">Relacions i cultura d'equip</h3>
+                                        <span class="text-xs font-semibold uppercase tracking-wide text-primary bg-primary/10 px-3 py-1 rounded-full whitespace-nowrap">2 programes</span>
                                     </div>
                                 </div>
-                                <div class="course-info-row">
-                                    <div class="course-info-icon ci-emerald"><i class="fas fa-circle-check"></i></div>
-                                    <div>
-                                        <span class="course-info-label">Resultat esperat</span>
-                                        <p class="course-info-text">Menys fricció, més cooperació i entorns de treball emocionalment més segurs.</p>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <article class="course-card">
+                                    <div class="course-card-header" style="background: linear-gradient(135deg, #22c55e 0%, #10b981 40%, #34d399 100%)">
+                                        <span class="course-badge">Cultura relacional</span>
+                                        <div class="course-header-icon"><i class="fas fa-handshake"></i></div>
+                                        <h4>Potencia les relacions sanes a la teva empresa</h4>
                                     </div>
-                                </div>
-                                <div class="course-divider"></div>
-                            </div>
-                            <div class="course-tags">
-                                <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-users" style="color: rgba(51, 64, 86, 0.9);"></i> Equips operatius</span>
-                                <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-building" style="color: rgba(51, 64, 86, 0.9);"></i> In-company</span>
-                                <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-gauge-high" style="color: rgba(51, 64, 86, 0.9);"></i> Intensitat mitjana</span>
-                            </div>
-                            <div class="course-card-footer">
-                                <a href="mailto:opcio@opcio-rrhh.com?subject=Inter%C3%A8s%20en%20el%20curs%3A%20Potencia%20les%20relacions%20sanes%20a%20la%20teva%20empresa&body=Hola%20Opcio%2C%0A%0AM%27interessa%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20aquest%20curs%3A%20Potencia%20les%20relacions%20sanes%20a%20la%20teva%20empresa.%0A%0AGr%C3%A0cies." class="course-cta">
-                                    Demanar informació
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
+                                    <div class="course-card-body">
+                                        <div class="course-info-row">
+                                            <div class="course-info-icon ci-primary"><i class="fas fa-user-tie"></i></div>
+                                            <div>
+                                                <span class="course-info-label">Per a qui</span>
+                                                <p class="course-info-text">Equips que necessiten reforçar confiança, coordinació i qualitat de les relacions internes.</p>
+                                            </div>
+                                        </div>
+                                        <div class="course-info-row">
+                                            <div class="course-info-icon ci-emerald"><i class="fas fa-circle-check"></i></div>
+                                            <div>
+                                                <span class="course-info-label">Resultat esperat</span>
+                                                <p class="course-info-text">Menys fricció, més cooperació i entorns de treball emocionalment més segurs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="course-divider"></div>
+                                    </div>
+                                    <div class="course-tags">
+                                        <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-users" style="color: rgba(51, 64, 86, 0.9);"></i> Equips operatius</span>
+                                        <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-building" style="color: rgba(51, 64, 86, 0.9);"></i> In-company</span>
+                                        <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-gauge-high" style="color: rgba(51, 64, 86, 0.9);"></i> Intensitat mitjana</span>
+                                    </div>
+                                    <div class="course-card-footer">
+                                        <a href="mailto:opcio@opcio-rrhh.com?subject=Inter%C3%A8s%20en%20el%20curs%3A%20Potencia%20les%20relacions%20sanes%20a%20la%20teva%20empresa&body=Hola%20Opcio%2C%0A%0AM%27interessa%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20aquest%20curs%3A%20Potencia%20les%20relacions%20sanes%20a%20la%20teva%20empresa.%0A%0AGr%C3%A0cies." class="course-cta">
+                                            Demanar informació
+                                            <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
 
-                        <article class="course-card">
-                            <div class="course-card-header" style="background: linear-gradient(135deg, #10b981 0%, #14b8a6 40%, #2dd4bf 100%)">
-                                <span class="course-badge">Col·laboració</span>
-                                <div class="course-header-icon"><i class="fas fa-users"></i></div>
-                                <h4>Del grup a l'equip: activar la intel·ligència col·lectiva</h4>
-                            </div>
-                            <div class="course-card-body">
-                                <div class="course-info-row">
-                                    <div class="course-info-icon ci-primary"><i class="fas fa-user-tie"></i></div>
-                                    <div>
-                                        <span class="course-info-label">Per a qui</span>
-                                        <p class="course-info-text">Grups de treball que volen millorar cohesió, corresponsabilitat i alineació.</p>
+                                <article class="course-card">
+                                    <div class="course-card-header" style="background: linear-gradient(135deg, #10b981 0%, #14b8a6 40%, #2dd4bf 100%)">
+                                        <span class="course-badge">Col·laboració</span>
+                                        <div class="course-header-icon"><i class="fas fa-users"></i></div>
+                                        <h4>Del grup a l'equip: activar la intel·ligència col·lectiva</h4>
                                     </div>
-                                </div>
-                                <div class="course-info-row">
-                                    <div class="course-info-icon ci-emerald"><i class="fas fa-circle-check"></i></div>
-                                    <div>
-                                        <span class="course-info-label">Resultat esperat</span>
-                                        <p class="course-info-text">Equips més conscients, autònoms i enfocats en objectius compartits.</p>
+                                    <div class="course-card-body">
+                                        <div class="course-info-row">
+                                            <div class="course-info-icon ci-primary"><i class="fas fa-user-tie"></i></div>
+                                            <div>
+                                                <span class="course-info-label">Per a qui</span>
+                                                <p class="course-info-text">Grups de treball que volen millorar cohesió, corresponsabilitat i alineació.</p>
+                                            </div>
+                                        </div>
+                                        <div class="course-info-row">
+                                            <div class="course-info-icon ci-emerald"><i class="fas fa-circle-check"></i></div>
+                                            <div>
+                                                <span class="course-info-label">Resultat esperat</span>
+                                                <p class="course-info-text">Equips més conscients, autònoms i enfocats en objectius compartits.</p>
+                                            </div>
+                                        </div>
+                                        <div class="course-divider"></div>
                                     </div>
-                                </div>
-                                <div class="course-divider"></div>
+                                    <div class="course-tags">
+                                        <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-layer-group" style="color: rgba(51, 64, 86, 0.9);"></i> Equips multirol</span>
+                                        <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-building" style="color: rgba(51, 64, 86, 0.9);"></i> Workshop experiencial</span>
+                                        <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-chart-line" style="color: rgba(51, 64, 86, 0.9);"></i> Aplicació immediata</span>
+                                    </div>
+                                    <div class="course-card-footer">
+                                        <a href="mailto:opcio@opcio-rrhh.com?subject=Inter%C3%A8s%20en%20el%20curs%3A%20Del%20grup%20a%20l%27equip%3A%20activar%20la%20intel%C2%B7lig%C3%A8ncia%20col%C2%B7lectiva&body=Hola%20Opcio%2C%0A%0AM%27interessa%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20aquest%20curs%3A%20Del%20grup%20a%20l%27equip%3A%20activar%20la%20intel%C2%B7lig%C3%A8ncia%20col%C2%B7lectiva.%0A%0AGr%C3%A0cies." class="course-cta">
+                                            Demanar informació
+                                            <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
                             </div>
-                            <div class="course-tags">
-                                <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-layer-group" style="color: rgba(51, 64, 86, 0.9);"></i> Equips multirol</span>
-                                <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-building" style="color: rgba(51, 64, 86, 0.9);"></i> Workshop experiencial</span>
-                                <span class="course-tag" style="color: rgba(51, 64, 86, 0.9);"><i class="fas fa-chart-line" style="color: rgba(51, 64, 86, 0.9);"></i> Aplicació immediata</span>
-                            </div>
-                            <div class="course-card-footer">
-                                <a href="mailto:opcio@opcio-rrhh.com?subject=Inter%C3%A8s%20en%20el%20curs%3A%20Del%20grup%20a%20l%27equip%3A%20activar%20la%20intel%C2%B7lig%C3%A8ncia%20col%C2%B7lectiva&body=Hola%20Opcio%2C%0A%0AM%27interessa%20rebre%20m%C3%A9s%20informaci%C3%B3%20sobre%20aquest%20curs%3A%20Del%20grup%20a%20l%27equip%3A%20activar%20la%20intel%C2%B7lig%C3%A8ncia%20col%C2%B7lectiva.%0A%0AGr%C3%A0cies." class="course-cta">
-                                    Demanar informació
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </article>
+                        </div>
                     </div>
                 </div>
 
-                <div data-aos="fade-up" data-aos-delay="150">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-2xl font-display font-bold text-neutral">Lideratge, benestar i rendiment sostenible</h3>
-                        <span class="text-xs font-semibold uppercase tracking-wide text-primary bg-primary/10 px-3 py-1 rounded-full">4 programes</span>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
+                <div class="courses-stage" data-aos="fade-up" data-aos-delay="150">
+                    <div class="grid lg:grid-cols-12 gap-8 xl:gap-10 items-start">
+                        <div class="lg:col-span-4">
+                            <div class="courses-stage-card lg:sticky lg:top-28">
+                                <div class="relative z-10">
+                                    <span class="courses-kicker mb-5">Bloc 02</span>
+                                    <div class="flex items-center justify-between gap-4 mb-5">
+                                        <h3 class="text-2xl xl:text-3xl font-display font-bold text-neutral">Lideratge, benestar i rendiment sostenible</h3>
+                                        <span class="text-xs font-semibold uppercase tracking-wide text-primary bg-primary/10 px-3 py-1 rounded-full whitespace-nowrap">4 programes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <div class="grid md:grid-cols-2 gap-6">
                         <article class="course-card">
                             <div class="course-card-header" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 40%, #60a5fa 100%)">
                                 <span class="course-badge">Benestar estratègic</span>
@@ -1343,15 +1454,26 @@
                                 </a>
                             </div>
                         </article>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-2xl font-display font-bold text-neutral">Excel·lència en facilitació i disseny formatiu</h3>
-                        <span class="text-xs font-semibold uppercase tracking-wide text-primary bg-primary/10 px-3 py-1 rounded-full">3 programes</span>
-                    </div>
-                    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <div class="courses-stage" data-aos="fade-up" data-aos-delay="200">
+                    <div class="grid lg:grid-cols-12 gap-8 xl:gap-10 items-start">
+                        <div class="lg:col-span-4">
+                            <div class="courses-stage-card lg:sticky lg:top-28">
+                                <div class="relative z-10">
+                                    <span class="courses-kicker mb-5">Bloc 03</span>
+                                    <div class="flex items-center justify-between gap-4 mb-5">
+                                        <h3 class="text-2xl xl:text-3xl font-display font-bold text-neutral">Excel·lència en facilitació i disseny formatiu</h3>
+                                        <span class="text-xs font-semibold uppercase tracking-wide text-primary bg-primary/10 px-3 py-1 rounded-full whitespace-nowrap">3 programes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <div class="grid md:grid-cols-2 gap-6">
                         <article class="course-card">
                             <div class="course-card-header" style="background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 40%, #818cf8 100%)">
                                 <span class="course-badge">Facilitació</span>
@@ -1424,7 +1546,7 @@
                             </div>
                         </article>
 
-                        <article class="course-card">
+                        <article class="course-card md:col-span-2 md:max-w-[calc(50%-0.75rem)] md:mx-auto">
                             <div class="course-card-header" style="background: linear-gradient(135deg, #f43f5e 0%, #ef4444 40%, #f87171 100%)">
                                 <span class="course-badge">Disseny instruccional</span>
                                 <div class="course-header-icon"><i class="fas fa-diagram-project"></i></div>
@@ -1459,12 +1581,14 @@
                                 </a>
                             </div>
                         </article>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="mt-14 max-w-5xl mx-auto text-center" data-aos="fade-up" data-aos-delay="250">
-                <div class="bg-white rounded-3xl border border-support shadow-lg p-8 md:p-10">
+                <div class="courses-cta-card rounded-[2rem] p-8 md:p-10">
                     <h3 class="text-2xl font-display font-bold text-neutral mb-4">No trobes exactament el programa que tens al cap?</h3>
                     <p class="text-secondary text-lg leading-relaxed mb-6">
                         També dissenyem itineraris a mida per equips, comandaments i organitzacions. Ens pots escriure i et recomanarem estructura, format i nivell d'intensitat.
