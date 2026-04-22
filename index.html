@@ -439,114 +439,424 @@
 
     
 
-    <!-- Método Section -->
-    <section class="metodo-section bg-white py-24 relative overflow-hidden" id="metodo">
-        <!-- Subtle background image -->
-        <div class="absolute inset-0 pointer-events-none">
-            <img src="images/canillo2.jpg" alt="" class="w-full h-full object-cover object-center opacity-[0.60]">
-            <div class="absolute inset-0 bg-white/50"></div>
+    <!-- Método Section — Split scroll narrative -->
+    <style>
+        .metodo-narrative-section {
+            isolation: isolate;
+            overflow: visible;
+        }
+        .metodo-narrative-section .metodo-pin-rail {
+            position: relative;
+        }
+        .metodo-narrative-section .metodo-sticky-panel {
+            min-height: calc(100vh - 7rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @media (max-width: 1023px) {
+            .metodo-narrative-section .metodo-sticky-panel {
+                min-height: auto;
+                display: block;
+            }
+        }
+        .metodo-narrative-section .metodo-phase-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(5rem, 9vw, 8rem);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, #5881C6 0%, #334056 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-variant-numeric: tabular-nums;
+            display: inline-block;
+        }
+        .metodo-narrative-section .metodo-icon {
+            width: 72px; height: 72px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(88,129,198,0.12), rgba(164,195,217,0.28));
+            color: #5881C6;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 10px 30px -10px rgba(88,129,198,0.35);
+        }
+        .metodo-narrative-section [data-phase-number],
+        .metodo-narrative-section [data-phase-icon],
+        .metodo-narrative-section [data-phase-title],
+        .metodo-narrative-section [data-phase-subtitle],
+        .metodo-narrative-section [data-phase-label] {
+            transition: opacity .35s ease, transform .35s ease;
+        }
+        .metodo-narrative-section.is-switching [data-phase-number],
+        .metodo-narrative-section.is-switching [data-phase-icon],
+        .metodo-narrative-section.is-switching [data-phase-title],
+        .metodo-narrative-section.is-switching [data-phase-subtitle],
+        .metodo-narrative-section.is-switching [data-phase-label] {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        .metodo-narrative-section .metodo-dot {
+            width: 12px; height: 12px;
+            border-radius: 9999px;
+            background: #CCD6EB;
+            transition: background .35s ease, transform .35s ease;
+            flex-shrink: 0;
+        }
+        .metodo-narrative-section .metodo-dot.active {
+            background: #5881C6;
+            transform: scale(1.35);
+            box-shadow: 0 0 0 6px rgba(88,129,198,0.15);
+        }
+        .metodo-narrative-section .metodo-dot-line {
+            flex: 1;
+            height: 2px;
+            background: #CCD6EB;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        .metodo-narrative-section .metodo-dot-line::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #5881C6;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .5s ease;
+        }
+        .metodo-narrative-section .metodo-dot-line.filled::after {
+            transform: scaleX(1);
+        }
+        .metodo-narrative-section .metodo-chapter {
+            scroll-margin-top: 140px;
+        }
+        .metodo-narrative-section .metodo-chapter-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .metodo-narrative-section .metodo-chapter-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #5881C6 0%, #A4C3D9 100%);
+            opacity: 0;
+            transition: opacity .4s ease;
+        }
+        .metodo-narrative-section .metodo-chapter.is-active .metodo-chapter-card::before {
+            opacity: 1;
+        }
+    </style>
+    <section class="metodo-narrative-section bg-white py-24 relative overflow-x-hidden" id="metodo">
+        <!-- Subtle background -->
+        <div class="absolute inset-0 pointer-events-none -z-10">
+            <img src="images/canillo2.jpg" alt="" class="w-full h-full object-cover object-center opacity-[0.10]">
+            <div class="absolute inset-0 bg-gradient-to-b from-white via-white/85 to-white"></div>
         </div>
-        <!-- Background elements -->
-        <div class="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 opacity-30">
-            <svg width="640" height="640" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g opacity="0.5">
-                    <path d="M640 0C594.881 0 550.241 18.9685 517.803 51.7803C485.365 84.5921 466.667 129.742 466.667 175.439V464.561C466.667 510.258 485.365 555.408 517.803 588.22C550.241 621.031 594.881 640 640 640" stroke="#CCD6EB" stroke-width="2"/>
-                </g>
-            </svg>
-            </div>
-            
-        <div class="container mx-auto py-20 relative">
-            <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
-                <span class="inline-flex items-center gap-2 bg-white/70 px-4 py-2 rounded-full text-sm font-semibold mb-6" style="color: rgba(51, 64, 86, 0.9);">
+
+        <div class="container mx-auto px-6 relative">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full text-sm font-semibold mb-6" style="color: rgba(51, 64, 86, 0.9);">
                     <i class="fas fa-drafting-compass"></i> El Nostre Mètode
                 </span>
                 <h2 class="text-4xl lg:text-5xl font-display font-extrabold text-neutral leading-tight">Un Procés Centrat en les Persones</h2>
-                <p class="text-primary mt-4 text-lg">Treballem de forma col·laborativa per crear solucions a mida que generen un impacte durador.</p>
-                        </div>
-            
-            <div class="relative mt-20 max-w-4xl mx-auto">
-                <!-- Vertical Timeline -->
-                <div class="relative">
-                    <!-- Connecting line - Enhanced visibility -->
-                    <div class="absolute left-1/2 top-8 bottom-8 w-1 transform -translate-x-1/2" style="background: white; opacity: 0.4;"></div>
-                    
-                    <div class="space-y-16">
-                        <!-- Step 1 -->
-                        <div class="relative flex items-center" data-aos="fade-up" data-aos-delay="100">
-                            <div class="flex-1 pr-8 text-right">
-                                <div class="bg-white rounded-3xl p-8 shadow-lg border border-support hover:shadow-xl transition-shadow duration-300">
-                                    <h3 class="text-2xl font-display font-bold text-neutral mb-3">Diagnòstic i Co-creació</h3>
-                                    <p class="text-secondary leading-relaxed">Escoltem i analitzem les teves necessitats per definir junts els objectius del projecte. Realitzem una avaluació integral de la situació actual.</p>
-                                    <div class="mt-4 flex justify-end">
-                                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">Fase inicial</span>
-                    </div>
-                                </div>
-                            </div>
-                            <!-- Circle -->
-                            <div class="relative z-10 w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                                <span class="font-extrabold text-2xl text-white">1</span>
-                            </div>
-                            <div class="flex-1 pl-8"></div>
-                </div>
-                
-                        <!-- Step 2 -->
-                        <div class="relative flex items-center" data-aos="fade-up" data-aos-delay="200">
-                            <div class="flex-1 pr-8"></div>
-                            <!-- Circle -->
-                            <div class="relative z-10 w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                                <span class="font-extrabold text-2xl text-white">2</span>
-                        </div>
-                            <div class="flex-1 pl-8 text-left">
-                                <div class="bg-white rounded-3xl p-8 shadow-lg border border-support hover:shadow-xl transition-shadow duration-300">
-                                    <h3 class="text-2xl font-display font-bold text-neutral mb-3">Disseny a Mida</h3>
-                                    <p class="text-secondary leading-relaxed">Desenvolupem una full de ruta i solucions personalitzades amb metodologies provades. Creem un pla específic per a la teva organització.</p>
-                                    <div class="mt-4">
-                                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">Planificació</span>
-                    </div>
-                                </div>
-                            </div>
-                </div>
-                
-                        <!-- Step 3 -->
-                        <div class="relative flex items-center" data-aos="fade-up" data-aos-delay="300">
-                            <div class="flex-1 pr-8 text-right">
-                                <div class="bg-white rounded-3xl p-8 shadow-lg border border-support hover:shadow-xl transition-shadow duration-300">
-                                    <h3 class="text-2xl font-display font-bold text-neutral mb-3">Implementació i Acompanyament</h3>
-                                    <p class="text-secondary leading-relaxed">T'acompanyem durant tot el procés, facilitant l'adopció i el canvi. Proporcionem suport continu i ajustos necessaris.</p>
-                                    <div class="mt-4 flex justify-end">
-                                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">Execució</span>
-                        </div>
-                    </div>
-                            </div>
-                            <!-- Circle -->
-                            <div class="relative z-10 w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                                <span class="font-extrabold text-2xl text-white">3</span>
-                            </div>
-                            <div class="flex-1 pl-8"></div>
+                <p class="text-secondary mt-4 text-lg">Quatre fases, un mateix fil conductor: tu i el teu equip al centre de cada decisió.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                <!-- Sticky narrative panel (desktop) -->
+                <aside class="hidden lg:block lg:col-span-5 metodo-pin-rail" data-metodo-pin-rail>
+                    <div class="metodo-sticky-panel" data-metodo-pin-panel>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-xs uppercase tracking-[0.25em] text-secondary font-bold" data-phase-label>Fase inicial</span>
+                            <span class="h-px w-10 bg-support"></span>
+                            <span class="text-xs uppercase tracking-[0.25em] text-secondary font-semibold">Fase <span data-phase-current>1</span> / 4</span>
                         </div>
 
-                        <!-- Step 4 -->
-                        <div class="relative flex items-center mb-12" data-aos="fade-up" data-aos-delay="400">
-                            <div class="flex-1 pr-8"></div>
-                            <!-- Circle -->
-                            <div class="relative z-10 w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                                <span class="font-extrabold text-2xl text-white">4</span>
-                            </div>
-                            <div class="flex-1 pl-8 text-left">
-                                <div class="bg-white rounded-3xl p-8 shadow-lg border border-support hover:shadow-xl transition-shadow duration-300">
-                                    <h3 class="text-2xl font-display font-bold text-neutral mb-3">Avaluació d'Impacte</h3>
-                                    <p class="text-secondary leading-relaxed">Mesurem els resultats i l'impacte real per assegurar la consecució dels objectius. Analitzem mètriques i proporcionem informes detallats.</p>
-                                    <div class="mt-4">
-                                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">Resultats</span>
-                                    </div>
-                                </div>
+                        <div class="mb-6">
+                            <span class="metodo-phase-number" data-phase-number>01</span>
+                        </div>
+
+                        <div class="metodo-icon mb-8">
+                            <i class="fas fa-compass" data-phase-icon></i>
+                        </div>
+
+                        <h3 class="text-3xl xl:text-4xl font-display font-extrabold text-neutral leading-[1.1] mb-5" data-phase-title>Diagnòstic i Co-creació</h3>
+                        <p class="text-secondary text-lg leading-relaxed mb-10" data-phase-subtitle>Escoltem, analitzem i definim junts el punt de partida del projecte.</p>
+
+                        <!-- Progress track -->
+                        <div class="flex items-center gap-2 max-w-[360px]">
+                            <div class="metodo-dot active" data-dot="0"></div>
+                            <div class="metodo-dot-line" data-line="0"></div>
+                            <div class="metodo-dot" data-dot="1"></div>
+                            <div class="metodo-dot-line" data-line="1"></div>
+                            <div class="metodo-dot" data-dot="2"></div>
+                            <div class="metodo-dot-line" data-line="2"></div>
+                            <div class="metodo-dot" data-dot="3"></div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Chapters -->
+                <div class="lg:col-span-7 space-y-20 lg:space-y-28" data-metodo-content>
+                    <!-- Chapter 1 -->
+                    <article class="metodo-chapter is-active" data-chapter="0" data-aos="fade-up">
+                        <div class="lg:hidden flex items-center gap-4 mb-5">
+                            <span class="text-5xl font-display font-extrabold" style="background: linear-gradient(135deg,#5881C6,#334056); -webkit-background-clip:text; background-clip:text; color:transparent;">01</span>
+                            <div>
+                                <p class="text-xs uppercase tracking-widest text-secondary font-semibold">Fase 1 / 4</p>
+                                <p class="text-xs uppercase tracking-widest text-primary font-bold mt-1">Fase inicial</p>
                             </div>
                         </div>
+                        <div class="metodo-chapter-card bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-support/60">
+                            <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl mb-5 lg:hidden">
+                                <i class="fas fa-compass"></i>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-display font-bold text-neutral mb-4">Diagnòstic i Co-creació</h3>
+                            <p class="text-secondary leading-relaxed text-lg mb-8">Escoltem activament i analitzem el context amb una mirada sistèmica. Involucrem totes les veus rellevants per entendre què passa realment i on hi ha oportunitat de canvi.</p>
+                            <div class="border-t border-support/60 pt-6">
+                                <p class="text-xs uppercase tracking-[0.2em] text-primary font-bold mb-4">Què en sortirà</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Mapa de l'estat actual i de les parts interessades</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Oportunitats prioritzades per impacte i esforç</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Objectius consensuats amb l'equip directiu</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Chapter 2 -->
+                    <article class="metodo-chapter" data-chapter="1" data-aos="fade-up">
+                        <div class="lg:hidden flex items-center gap-4 mb-5">
+                            <span class="text-5xl font-display font-extrabold" style="background: linear-gradient(135deg,#5881C6,#334056); -webkit-background-clip:text; background-clip:text; color:transparent;">02</span>
+                            <div>
+                                <p class="text-xs uppercase tracking-widest text-secondary font-semibold">Fase 2 / 4</p>
+                                <p class="text-xs uppercase tracking-widest text-primary font-bold mt-1">Planificació</p>
+                            </div>
+                        </div>
+                        <div class="metodo-chapter-card bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-support/60">
+                            <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl mb-5 lg:hidden">
+                                <i class="fas fa-drafting-compass"></i>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-display font-bold text-neutral mb-4">Disseny a Mida</h3>
+                            <p class="text-secondary leading-relaxed text-lg mb-8">Dissenyem amb tu una solució única, mai un paquet tancat. Apliquem metodologies provades adaptades al teu context, ritme i cultura organitzativa.</p>
+                            <div class="border-t border-support/60 pt-6">
+                                <p class="text-xs uppercase tracking-[0.2em] text-primary font-bold mb-4">Què en sortirà</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Pla d'acció amb fites i responsables</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Metodologia adaptada al teu equip</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Indicadors d'èxit i sistema de mesura</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Chapter 3 -->
+                    <article class="metodo-chapter" data-chapter="2" data-aos="fade-up">
+                        <div class="lg:hidden flex items-center gap-4 mb-5">
+                            <span class="text-5xl font-display font-extrabold" style="background: linear-gradient(135deg,#5881C6,#334056); -webkit-background-clip:text; background-clip:text; color:transparent;">03</span>
+                            <div>
+                                <p class="text-xs uppercase tracking-widest text-secondary font-semibold">Fase 3 / 4</p>
+                                <p class="text-xs uppercase tracking-widest text-primary font-bold mt-1">Execució</p>
+                            </div>
+                        </div>
+                        <div class="metodo-chapter-card bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-support/60">
+                            <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl mb-5 lg:hidden">
+                                <i class="fas fa-people-arrows"></i>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-display font-bold text-neutral mb-4">Implementació i Acompanyament</h3>
+                            <p class="text-secondary leading-relaxed text-lg mb-8">Ens arromanguem i posem les mans. Facilitem, formem i acompanyem el canvi amb presència continuada. Els ajustos són part del pla, no l'excepció.</p>
+                            <div class="border-t border-support/60 pt-6">
+                                <p class="text-xs uppercase tracking-[0.2em] text-primary font-bold mb-4">Què en sortirà</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Sessions, tallers i formacions a mida</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Coaching d'equip i individual</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Revisions periòdiques i ajustos del pla</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Chapter 4 -->
+                    <article class="metodo-chapter" data-chapter="3" data-aos="fade-up">
+                        <div class="lg:hidden flex items-center gap-4 mb-5">
+                            <span class="text-5xl font-display font-extrabold" style="background: linear-gradient(135deg,#5881C6,#334056); -webkit-background-clip:text; background-clip:text; color:transparent;">04</span>
+                            <div>
+                                <p class="text-xs uppercase tracking-widest text-secondary font-semibold">Fase 4 / 4</p>
+                                <p class="text-xs uppercase tracking-widest text-primary font-bold mt-1">Resultats</p>
+                            </div>
+                        </div>
+                        <div class="metodo-chapter-card bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-support/60">
+                            <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl mb-5 lg:hidden">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-2xl lg:text-3xl font-display font-bold text-neutral mb-4">Avaluació d'Impacte</h3>
+                            <p class="text-secondary leading-relaxed text-lg mb-8">Mesurem què ha canviat realment, no només què s'ha fet. Tanquem el cicle amb evidència i obrim el següent pas amb claredat.</p>
+                            <div class="border-t border-support/60 pt-6">
+                                <p class="text-xs uppercase tracking-[0.2em] text-primary font-bold mb-4">Què en sortirà</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Informe d'impacte amb mètriques clau</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Aprenentatges i recomanacions pràctiques</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check-circle text-primary mt-1"></i><span class="text-neutral">Roadmap per al següent cicle de millora</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Closing CTA -->
+                    <div class="text-center pt-4 lg:pt-0" data-aos="fade-up">
+                        <p class="text-secondary mb-6">Cada projecte comença sempre pel mateix pas: escoltar.</p>
+                        <a href="#contacto" class="btn hero-primary w-max mx-auto">
+                            <span>Comencem pel diagnòstic</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        (function() {
+            const section = document.getElementById('metodo');
+            if (!section) return;
+
+            const phases = [
+                { n: '01', icon: 'fa-compass',          title: "Diagnòstic i Co-creació",          subtitle: "Escoltem, analitzem i definim junts el punt de partida del projecte.", label: 'Fase inicial' },
+                { n: '02', icon: 'fa-drafting-compass', title: "Disseny a Mida",                    subtitle: "Co-creem una solució única, adaptada al teu context i cultura.",      label: 'Planificació' },
+                { n: '03', icon: 'fa-people-arrows',    title: "Implementació i Acompanyament",     subtitle: "Facilitem el canvi amb presència continuada i ajustos pel camí.",    label: 'Execució' },
+                { n: '04', icon: 'fa-chart-line',       title: "Avaluació d'Impacte",               subtitle: "Mesurem què ha canviat i obrim el següent cicle amb claredat.",      label: 'Resultats' }
+            ];
+
+            const chapters = section.querySelectorAll('[data-chapter]');
+            const phaseNumber   = section.querySelector('[data-phase-number]');
+            const phaseCurrent  = section.querySelector('[data-phase-current]');
+            const phaseIcon     = section.querySelector('[data-phase-icon]');
+            const phaseTitle    = section.querySelector('[data-phase-title]');
+            const phaseSubtitle = section.querySelector('[data-phase-subtitle]');
+            const phaseLabel    = section.querySelector('[data-phase-label]');
+            const dots          = section.querySelectorAll('.metodo-dot');
+            const lines         = section.querySelectorAll('.metodo-dot-line');
+            const pinRail       = section.querySelector('[data-metodo-pin-rail]');
+            const pinPanel      = section.querySelector('[data-metodo-pin-panel]');
+            const contentCol    = section.querySelector('[data-metodo-content]');
+            const desktopMq     = window.matchMedia('(min-width: 1024px)');
+            const pinTopOffset  = 112;
+
+            let current = -1;
+            const setActive = (i) => {
+                if (i === current) return;
+                current = i;
+                const p = phases[i];
+
+                section.classList.add('is-switching');
+                window.setTimeout(() => {
+                    if (phaseNumber)   phaseNumber.textContent   = p.n;
+                    if (phaseCurrent)  phaseCurrent.textContent  = String(i + 1);
+                    if (phaseIcon)     phaseIcon.className       = 'fas ' + p.icon;
+                    if (phaseTitle)    phaseTitle.textContent    = p.title;
+                    if (phaseSubtitle) phaseSubtitle.textContent = p.subtitle;
+                    if (phaseLabel)    phaseLabel.textContent    = p.label;
+                    section.classList.remove('is-switching');
+                }, 180);
+
+                dots.forEach((d, j) => d.classList.toggle('active', j <= i));
+                lines.forEach((l, j) => l.classList.toggle('filled', j < i));
+                chapters.forEach((c, j) => c.classList.toggle('is-active', j === i));
+            };
+
+            const obs = new IntersectionObserver((entries) => {
+                entries
+                    .filter(e => e.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+                    .forEach(e => {
+                        const idx = parseInt(e.target.dataset.chapter, 10);
+                        setActive(idx);
+                    });
+            }, { rootMargin: '-35% 0px -45% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
+
+            chapters.forEach(c => obs.observe(c));
+
+            const resetPin = () => {
+                if (!pinRail || !pinPanel) return;
+                pinRail.style.minHeight = '';
+                pinPanel.style.position = '';
+                pinPanel.style.top = '';
+                pinPanel.style.bottom = '';
+                pinPanel.style.left = '';
+                pinPanel.style.width = '';
+            };
+
+            const updatePin = () => {
+                if (!pinRail || !pinPanel || !contentCol || !desktopMq.matches) {
+                    resetPin();
+                    return;
+                }
+
+                const railRect = pinRail.getBoundingClientRect();
+                const contentRect = contentCol.getBoundingClientRect();
+                const panelHeight = pinPanel.offsetHeight;
+                const contentHeight = contentCol.offsetHeight;
+                const scrollY = window.scrollY || window.pageYOffset;
+                const railTop = scrollY + railRect.top;
+                const contentBottom = scrollY + contentRect.bottom;
+                const startPin = railTop - pinTopOffset;
+                const endPin = contentBottom - panelHeight - pinTopOffset;
+
+                pinRail.style.minHeight = `${Math.max(contentHeight, panelHeight)}px`;
+
+                if (panelHeight >= window.innerHeight || endPin <= startPin) {
+                    resetPin();
+                    return;
+                }
+
+                if (scrollY <= startPin) {
+                    pinPanel.style.position = 'relative';
+                    pinPanel.style.top = '0';
+                    pinPanel.style.bottom = 'auto';
+                    pinPanel.style.left = '0';
+                    pinPanel.style.width = '100%';
+                    return;
+                }
+
+                if (scrollY >= endPin) {
+                    pinPanel.style.position = 'absolute';
+                    pinPanel.style.top = 'auto';
+                    pinPanel.style.bottom = '0';
+                    pinPanel.style.left = '0';
+                    pinPanel.style.width = '100%';
+                    return;
+                }
+
+                pinPanel.style.position = 'fixed';
+                pinPanel.style.top = `${pinTopOffset}px`;
+                pinPanel.style.bottom = 'auto';
+                pinPanel.style.left = `${railRect.left}px`;
+                pinPanel.style.width = `${railRect.width}px`;
+            };
+
+            let pinRaf = null;
+            const requestPinUpdate = () => {
+                if (pinRaf) return;
+                pinRaf = window.requestAnimationFrame(() => {
+                    updatePin();
+                    pinRaf = null;
+                });
+            };
+
+            setActive(0);
+            requestPinUpdate();
+            window.addEventListener('scroll', requestPinUpdate, { passive: true });
+            window.addEventListener('resize', requestPinUpdate);
+            if (desktopMq.addEventListener) {
+                desktopMq.addEventListener('change', requestPinUpdate);
+            } else if (desktopMq.addListener) {
+                desktopMq.addListener(requestPinUpdate);
+            }
+        })();
+    </script>
 
     <!-- Why Choose Us Section -->
     <section class="py-24 relative overflow-hidden" id="porque-elegirnos">
@@ -1189,6 +1499,10 @@
                     <img src="images/clients/universitat-europea.png" alt="Universitat Europea Logo" class="h-12 mx-10 object-contain">
                     <img src="images/clients/innovand.png" alt="Innovand Logo" class="h-16 mx-10 object-contain">
                     <img src="images/clients/escape-andorra.png" alt="Escape Andorra Logo" class="h-16 mx-10 object-contain">
+                    <img src="images/clients/tempus.png" alt="Tempus Assessorament Logo" class="h-16 mx-10 object-contain">
+                    <img src="images/clients/hjstrategies.png" alt="HJ Strategies Logo" class="h-16 mx-10 object-contain">
+                    <img src="images/clients/pandora.png" alt="Pandora Logo" class="h-16 mx-10 object-contain">
+                    <img src="images/clients/sudperformance.png" alt="Sud Performance Logo" class="h-16 mx-10 object-contain">
                 </div>
             </div>
         </div>
