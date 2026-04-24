@@ -65,3 +65,17 @@ docs/drafts/
 local/
 .local/
 
+# Unused video assets (removed from repo)
+videos/3070177-hd_1920_1080_24fps.mp4
+videos/3248990-uhd_3840_2160_25fps.mp4
+videos/andorra.mp4
+videos/capacitaciones.mp4
+videos/coaching-video.mp4
+videos/coaching.mp4
+videos/formation.mp4
+videos/hero-video.mp4
+videos/interview-1.mp4
+videos/interview-2.mp4
+videos/interview-3.mp4
+videos/teamwork-video.mp4
+
