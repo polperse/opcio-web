@@ -1,5 +1,7 @@
 // Enhanced OPCIO Group Website JavaScript
 document.addEventListener('DOMContentLoaded', function() {
+    // i18n must run early to redirect if necessary
+    initializeI18n();
     // Initialize all components
     initializeNavigation();
     initializeParallaxEffects();
@@ -19,6 +21,84 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSuccessCasesSlider();
     initializeLogoCarousel();
 });
+
+// ============================================================================
+// i18n — Language selector, persistence, and first-visit auto-redirect
+// ============================================================================
+function initializeI18n() {
+    const SUPPORTED = ['ca', 'es', 'en', 'fr'];
+    const STORAGE_KEY = 'opcio.preferredLang';
+    const SESSION_FLAG = 'opcio.langRedirected';
+
+    function getCurrentLang() {
+        const htmlLang = (document.documentElement.lang || 'ca').slice(0, 2).toLowerCase();
+        return SUPPORTED.includes(htmlLang) ? htmlLang : 'ca';
+    }
+
+    function getPageSlugFromPath(pathname) {
+        // Strip leading language prefix if present; return trailing slug like "/privacy.html" or "/"
+        const stripped = pathname.replace(/^\/(es|en|fr)(\/|$)/, '/');
+        const match = stripped.match(/\/([^\/]+\.html)$/i);
+        if (match) return '/' + match[1];
+        return '/';
+    }
+
+    function buildLangUrl(targetLang, slug) {
+        const base = targetLang === 'ca' ? '' : '/' + targetLang;
+        if (slug === '/' || slug === '') {
+            return base + '/';
+        }
+        return base + slug;
+    }
+
+    function handleSelectorClicks() {
+        const options = document.querySelectorAll('[data-i18n-selector] [data-lang]');
+        if (!options.length) return;
+        options.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetLang = link.dataset.lang;
+                if (!SUPPORTED.includes(targetLang)) return;
+                try { localStorage.setItem(STORAGE_KEY, targetLang); } catch (_) {}
+                const slug = getPageSlugFromPath(window.location.pathname);
+                const hash = window.location.hash || '';
+                window.location.href = buildLangUrl(targetLang, slug) + hash;
+            });
+        });
+    }
+
+    function updateSelectorLabels() {
+        const current = getCurrentLang();
+        const label = document.querySelector('[data-i18n-selector] [data-i18n-current]');
+        if (label) label.textContent = current.toUpperCase();
+        document.querySelectorAll('[data-i18n-selector] [data-lang]').forEach(link => {
+            link.classList.toggle('active', link.dataset.lang === current);
+        });
+    }
+
+    function maybeAutoRedirect() {
+        // Only auto-redirect from the catalan root pages (no /es/, /en/, /fr/ prefix)
+        const path = window.location.pathname;
+        if (/^\/(es|en|fr)(\/|$)/.test(path)) return;
+        if (sessionStorage.getItem(SESSION_FLAG)) return;
+        sessionStorage.setItem(SESSION_FLAG, '1');
+
+        let target = null;
+        try { target = localStorage.getItem(STORAGE_KEY); } catch (_) {}
+        if (!target || !SUPPORTED.includes(target)) {
+            const browser = (navigator.language || 'ca').slice(0, 2).toLowerCase();
+            target = SUPPORTED.includes(browser) ? browser : 'ca';
+        }
+        if (target === 'ca') return;
+        const slug = getPageSlugFromPath(path);
+        const hash = window.location.hash || '';
+        window.location.replace(buildLangUrl(target, slug) + hash);
+    }
+
+    handleSelectorClicks();
+    updateSelectorLabels();
+    maybeAutoRedirect();
+}
 
 // Enhanced Navigation with Scroll Effects
 function initializeNavigation() {
