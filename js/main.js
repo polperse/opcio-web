@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeI18n() {
     const SUPPORTED = ['ca', 'es', 'en', 'fr'];
     const STORAGE_KEY = 'opcio.preferredLang';
-    const SESSION_FLAG = 'opcio.langRedirected';
 
     function getCurrentLang() {
         const htmlLang = (document.documentElement.lang || 'ca').slice(0, 2).toLowerCase();
@@ -76,28 +75,8 @@ function initializeI18n() {
         });
     }
 
-    function maybeAutoRedirect() {
-        // Only auto-redirect from the catalan root pages (no /es/, /en/, /fr/ prefix)
-        const path = window.location.pathname;
-        if (/^\/(es|en|fr)(\/|$)/.test(path)) return;
-        if (sessionStorage.getItem(SESSION_FLAG)) return;
-        sessionStorage.setItem(SESSION_FLAG, '1');
-
-        let target = null;
-        try { target = localStorage.getItem(STORAGE_KEY); } catch (_) {}
-        if (!target || !SUPPORTED.includes(target)) {
-            const browser = (navigator.language || 'ca').slice(0, 2).toLowerCase();
-            target = SUPPORTED.includes(browser) ? browser : 'ca';
-        }
-        if (target === 'ca') return;
-        const slug = getPageSlugFromPath(path);
-        const hash = window.location.hash || '';
-        window.location.replace(buildLangUrl(target, slug) + hash);
-    }
-
     handleSelectorClicks();
     updateSelectorLabels();
-    maybeAutoRedirect();
 }
 
 // Enhanced Navigation with Scroll Effects
@@ -404,7 +383,9 @@ function initializeParallaxEffects() {
     
     // Initial header color update
     setTimeout(() => {
-        updateHeaderTextColor();
+        if (typeof updateHeaderTextColor === 'function') {
+            updateHeaderTextColor();
+        }
     }, 100);
 }
 
