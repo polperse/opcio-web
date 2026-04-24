@@ -29,25 +29,41 @@ function initializeI18n() {
     const SUPPORTED = ['ca', 'es', 'en', 'fr'];
     const STORAGE_KEY = 'opcio.preferredLang';
 
+    // Detect site base path. On GitHub Pages the site is served from
+    // https://<user>.github.io/<repo>/, so we need to prefix URLs with the repo
+    // name. On a custom domain (e.g. www.opciogroup.com) BASE will be ''.
+    function detectBase() {
+        const host = window.location.hostname;
+        if (host.endsWith('.github.io')) {
+            const first = window.location.pathname.split('/').filter(Boolean)[0];
+            if (first && !SUPPORTED.includes(first) && !first.endsWith('.html')) {
+                return '/' + first;
+            }
+        }
+        return '';
+    }
+    const BASE = detectBase();
+
     function getCurrentLang() {
         const htmlLang = (document.documentElement.lang || 'ca').slice(0, 2).toLowerCase();
         return SUPPORTED.includes(htmlLang) ? htmlLang : 'ca';
     }
 
     function getPageSlugFromPath(pathname) {
-        // Strip leading language prefix if present; return trailing slug like "/privacy.html" or "/"
-        const stripped = pathname.replace(/^\/(es|en|fr)(\/|$)/, '/');
+        let p = pathname;
+        if (BASE && p.startsWith(BASE)) p = p.slice(BASE.length) || '/';
+        const stripped = p.replace(/^\/(es|en|fr)(\/|$)/, '/');
         const match = stripped.match(/\/([^\/]+\.html)$/i);
         if (match) return '/' + match[1];
         return '/';
     }
 
     function buildLangUrl(targetLang, slug) {
-        const base = targetLang === 'ca' ? '' : '/' + targetLang;
+        const langPart = targetLang === 'ca' ? '' : '/' + targetLang;
         if (slug === '/' || slug === '') {
-            return base + '/';
+            return BASE + langPart + '/';
         }
-        return base + slug;
+        return BASE + langPart + slug;
     }
 
     function handleSelectorClicks() {
@@ -70,8 +86,12 @@ function initializeI18n() {
         const current = getCurrentLang();
         const label = document.querySelector('[data-i18n-selector] [data-i18n-current]');
         if (label) label.textContent = current.toUpperCase();
+        const slug = getPageSlugFromPath(window.location.pathname);
         document.querySelectorAll('[data-i18n-selector] [data-lang]').forEach(link => {
-            link.classList.toggle('active', link.dataset.lang === current);
+            const lang = link.dataset.lang;
+            link.classList.toggle('active', lang === current);
+            // Rewrite href so middle-click / open-in-new-tab also works on GitHub Pages
+            link.setAttribute('href', buildLangUrl(lang, slug));
         });
     }
 
