@@ -411,17 +411,32 @@ function initializeParallaxEffects() {
 
 // Logo Carousel
 function initializeLogoCarousel() {
-    const carouselTrack = document.querySelector('.logo-carousel-track');
-    if (carouselTrack && carouselTrack.children.length > 0) {
+    const carouselTracks = document.querySelectorAll('.logo-carousel-track');
+
+    carouselTracks.forEach(carouselTrack => {
+        if (carouselTrack.children.length === 0 || carouselTrack.dataset.carouselReady === 'true') {
+            return;
+        }
+
         // Pause animation on hover
         const carousel = carouselTrack.parentElement;
         carousel.addEventListener('mouseenter', () => carouselTrack.style.animationPlayState = 'paused');
         carousel.addEventListener('mouseleave', () => carouselTrack.style.animationPlayState = 'running');
 
-        // Duplicate logos for seamless loop
-        const logos = carouselTrack.innerHTML;
-        carouselTrack.innerHTML += logos;
-    }
+        // Duplicate the exact sequence once; the CSS moves by half the track width.
+        const logos = Array.from(carouselTrack.children);
+        const clones = document.createDocumentFragment();
+
+        logos.forEach(logo => {
+            const clone = logo.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            clones.appendChild(clone);
+        });
+
+        carouselTrack.appendChild(clones);
+        carouselTrack.dataset.carouselReady = 'true';
+        carouselTrack.classList.add('is-ready');
+    });
 }
 
 // Service Card Interactions

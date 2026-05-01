@@ -4138,16 +4138,26 @@ body::-webkit-scrollbar-thumb {
 
 /* Logo Carousel Animation */
 .logo-carousel-track {
-    animation: scroll 40s linear infinite;
+    animation: logo-scroll 40s linear infinite;
+    animation-play-state: paused;
+    width: max-content;
     will-change: transform;
 }
 
-@keyframes scroll {
+.logo-carousel-track.is-ready {
+    animation-play-state: running;
+}
+
+.logo-carousel-track img {
+    flex: 0 0 auto;
+}
+
+@keyframes logo-scroll {
     from {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
     to {
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
