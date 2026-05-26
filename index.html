@@ -499,7 +499,227 @@
 
     
 
-    <!-- Método Section — Split scroll narrative -->
+    <!-- Método Section — Horizontal phases -->
+    <style>
+        .metodo-horizontal-section {
+            isolation: isolate;
+        }
+
+        .metodo-horizontal-section .metodo-scroll {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(320px, 410px);
+            gap: 1.25rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            overscroll-behavior-inline: contain;
+            scroll-snap-type: x mandatory;
+            scroll-padding-inline: 1.5rem;
+            padding: 0.75rem 1.5rem 2rem;
+            margin-inline: -1.5rem;
+        }
+
+        .metodo-horizontal-section .metodo-scroll::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .metodo-horizontal-section .metodo-scroll::-webkit-scrollbar-track {
+            background: rgba(204, 214, 235, 0.45);
+            border-radius: 999px;
+        }
+
+        .metodo-horizontal-section .metodo-scroll::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, #5881C6, #334056);
+            border-radius: 999px;
+        }
+
+        .metodo-horizontal-section .metodo-phase-card {
+            min-height: 100%;
+            scroll-snap-align: start;
+            position: relative;
+        }
+
+        .metodo-horizontal-section .metodo-phase-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(5.5rem, 12vw, 7.5rem);
+            font-weight: 900;
+            line-height: 0.78;
+            letter-spacing: -0.07em;
+            color: rgba(88, 129, 198, 0.88);
+            text-shadow: 0 10px 24px rgba(51, 64, 86, 0.14);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .metodo-horizontal-section .metodo-phase-image {
+            width: min(46%, 190px);
+            aspect-ratio: 1.45 / 1;
+            object-fit: cover;
+            box-shadow: 0 16px 32px -18px rgba(51, 64, 86, 0.55);
+        }
+
+        .metodo-horizontal-section .metodo-phase-title {
+            color: #004A8C;
+        }
+
+        @media (min-width: 1280px) {
+            .metodo-horizontal-section .metodo-scroll {
+                grid-auto-columns: minmax(360px, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .metodo-horizontal-section .metodo-scroll {
+                grid-auto-columns: minmax(285px, 86vw);
+                padding-inline: 1rem;
+                margin-inline: -1rem;
+                scroll-padding-inline: 1rem;
+            }
+
+            .metodo-horizontal-section .metodo-phase-number {
+                font-size: 5rem;
+            }
+
+            .metodo-horizontal-section .metodo-phase-image {
+                width: 42%;
+            }
+        }
+    </style>
+    <section class="metodo-horizontal-section bg-white py-24 relative overflow-hidden" id="metodo">
+        <div class="absolute inset-0 pointer-events-none -z-10">
+            <img src="images/canillo2.jpg" alt="" class="w-full h-full object-cover object-center opacity-[0.10]">
+            <div class="absolute inset-0 bg-gradient-to-b from-white via-white/85 to-white"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative">
+            <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
+                <span class="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full text-lg font-semibold mb-6" style="color: rgba(51, 64, 86, 0.9);">
+                    <i class="fas fa-drafting-compass"></i> El Nostre Mètode
+                </span>
+                <h2 class="text-4xl lg:text-5xl font-display font-extrabold text-neutral leading-tight">Un Procés Centrat en les Persones</h2>
+                <p class="text-secondary mt-4 text-lg">Quatre fases, un mateix fil conductor: tu i el teu equip al centre de cada decisió.</p>
+            </div>
+
+            <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between" data-aos="fade-up">
+                <p class="text-secondary text-sm sm:text-base">Desplaça horitzontalment per veure les 4 fases.</p>
+            </div>
+
+            <div class="metodo-scroll" aria-label="Fases del mètode">
+                <article class="metodo-phase-card bg-white rounded-[2rem] p-7 md:p-8 shadow-xl border border-support/70" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start justify-between gap-5 mb-6">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.25em] text-secondary font-bold mb-3">Fase inicial</p>
+                            <p class="text-xs uppercase tracking-[0.25em] text-primary font-bold">Fase 1 / 4</p>
+                        </div>
+                        <img src="images/hr-1.jpg" alt="Diagnòstic i co-creació" class="metodo-phase-image rounded-sm">
+                    </div>
+                    <div class="flex items-end gap-4 mb-5">
+                        <span class="metodo-phase-number">01</span>
+                        <div class="mb-2 w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-primary text-2xl md:text-3xl font-display font-extrabold leading-tight mb-5">Diagnòstic i Co-creació</h3>
+                    <p class="text-secondary leading-relaxed text-base md:text-lg mb-7">Escoltem activament i analitzem el context amb una mirada sistèmica. Involucrem totes les veus rellevants per entendre què passa realment i on hi ha oportunitat de canvi.</p>
+                    <div class="pt-6 border-t border-support/70">
+                        <p class="text-lg font-display font-extrabold text-primary mb-4">Resultats obtinguts</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Mapa de l'estat actual i de les parts interessades</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Oportunitats prioritzades per impacte i esforç</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Objectius consensuats amb l'equip directiu</span></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="metodo-phase-card bg-white rounded-[2rem] p-7 md:p-8 shadow-xl border border-support/70" data-aos="fade-up" data-aos-delay="180">
+                    <div class="flex items-start justify-between gap-5 mb-6">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.25em] text-secondary font-bold mb-3">Planificació</p>
+                            <p class="text-xs uppercase tracking-[0.25em] text-primary font-bold">Fase 2 / 4</p>
+                        </div>
+                        <img src="images/hr-2.jpg" alt="Disseny a mida" class="metodo-phase-image rounded-sm">
+                    </div>
+                    <div class="flex items-end gap-4 mb-5">
+                        <span class="metodo-phase-number">02</span>
+                        <div class="mb-2 w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-primary text-2xl md:text-3xl font-display font-extrabold leading-tight mb-5">Disseny a Mida</h3>
+                    <p class="text-secondary leading-relaxed text-base md:text-lg mb-7">Dissenyem amb tu una solució única, mai un paquet tancat. Apliquem metodologies provades adaptades al teu context, ritme i cultura organitzativa.</p>
+                    <div class="pt-6 border-t border-support/70">
+                        <p class="text-lg font-display font-extrabold text-primary mb-4">Resultats obtinguts</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Pla d'acció amb fites i responsables</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Metodologia adaptada al teu equip</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Indicadors d'èxit i sistema de mesura</span></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="metodo-phase-card bg-white rounded-[2rem] p-7 md:p-8 shadow-xl border border-support/70" data-aos="fade-up" data-aos-delay="260">
+                    <div class="flex items-start justify-between gap-5 mb-6">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.25em] text-secondary font-bold mb-3">Execució</p>
+                            <p class="text-xs uppercase tracking-[0.25em] text-primary font-bold">Fase 3 / 4</p>
+                        </div>
+                        <img src="images/hr-3.jpg" alt="Implementació i acompanyament" class="metodo-phase-image rounded-sm">
+                    </div>
+                    <div class="flex items-end gap-4 mb-5">
+                        <span class="metodo-phase-number">03</span>
+                        <div class="mb-2 w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl">
+                            <i class="fas fa-people-arrows"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-primary text-2xl md:text-3xl font-display font-extrabold leading-tight mb-5">Implementació i Acompanyament</h3>
+                    <p class="text-secondary leading-relaxed text-base md:text-lg mb-7">Ens arromanguem i posem les mans. Facilitem, formem i acompanyem el canvi amb presència continuada. Els ajustos són part del pla, no l'excepció.</p>
+                    <div class="pt-6 border-t border-support/70">
+                        <p class="text-lg font-display font-extrabold text-primary mb-4">Resultats obtinguts</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Sessions, tallers i formacions a mida</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Coaching d'equip i individual</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Revisions periòdiques i ajustos del pla</span></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="metodo-phase-card bg-white rounded-[2rem] p-7 md:p-8 shadow-xl border border-support/70" data-aos="fade-up" data-aos-delay="340">
+                    <div class="flex items-start justify-between gap-5 mb-6">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.25em] text-secondary font-bold mb-3">Resultats</p>
+                            <p class="text-xs uppercase tracking-[0.25em] text-primary font-bold">Fase 4 / 4</p>
+                        </div>
+                        <img src="images/hr-4.jpg" alt="Avaluació d'impacte" class="metodo-phase-image rounded-sm">
+                    </div>
+                    <div class="flex items-end gap-4 mb-5">
+                        <span class="metodo-phase-number">04</span>
+                        <div class="mb-2 w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center text-xl">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-primary text-2xl md:text-3xl font-display font-extrabold leading-tight mb-5">Avaluació d'Impacte</h3>
+                    <p class="text-secondary leading-relaxed text-base md:text-lg mb-7">Mesurem què ha canviat realment, no només què s'ha fet. Tanquem el cicle amb evidència i obrim el següent pas amb claredat.</p>
+                    <div class="pt-6 border-t border-support/70">
+                        <p class="text-lg font-display font-extrabold text-primary mb-4">Resultats obtinguts</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Informe d'impacte amb mètriques clau</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Aprenentatges i recomanacions pràctiques</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-primary mt-1"></i><span class="text-secondary">Roadmap per al següent cicle de millora</span></li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center mt-10" data-aos="fade-up">
+                <p class="text-secondary mb-6">Cada projecte comença sempre pel mateix pas: escoltar.</p>
+                <a href="#contacto" class="btn hero-primary w-max mx-auto">
+                    <span>Comencem pel diagnòstic</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Método Section — Split scroll narrative (hidden legacy version) -->
     <style>
         .metodo-narrative-section {
             isolation: isolate;
@@ -609,7 +829,7 @@
             opacity: 1;
         }
     </style>
-    <section class="metodo-narrative-section bg-white py-24 relative overflow-x-hidden" id="metodo">
+    <section hidden class="metodo-narrative-section bg-white py-24 relative overflow-x-hidden" id="metodo-old">
         <!-- Subtle background -->
         <div class="absolute inset-0 pointer-events-none -z-10">
             <img src="images/canillo2.jpg" alt="" class="w-full h-full object-cover object-center opacity-[0.10]">
