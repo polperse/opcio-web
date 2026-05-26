@@ -49,6 +49,18 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        @media (min-width: 1201px) {
+            .header-v2 .nav-link {
+                font-size: 1.125rem;
+                font-weight: 600;
+            }
+
+            .header-v2 .nav-menu {
+                gap: 1.65rem;
+            }
+        }
+    </style>
     
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -225,6 +237,45 @@
                     </p>
                 </div>
             </div>
+
+            <div class="container mx-auto px-6 mt-20">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <h2 class="text-4xl lg:text-5xl font-display font-extrabold text-neutral leading-tight">La Nostra Filosofia</h2>
+                    <p class="text-secondary mt-4 text-lg">Els nostres principis són la brúixola que guia cada projecte, cada interacció i cada solució que oferim.</p>
+                            </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Misión -->
+                    <div class="bg-white rounded-2xl p-8 border border-support shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 shadow-sm" style="color: rgba(51, 64, 86, 0.9);">
+                            <i class="fas fa-bullseye text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-3">Missió</h3>
+                        <p class="text-secondary leading-relaxed">Contribuïm a construir <strong>cultures organitzatives</strong> que posen les <strong>persones al centre</strong>, com a veritables generadores de valor per a que esdevinguin <strong>motors de canvi i innovació</strong>, des d&apos;una base de <strong>mútua confiança</strong></p>
+                    </div>
+                    <!-- Visión -->
+                    <div class="bg-white rounded-2xl p-8 border border-support shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 shadow-sm" style="color: rgba(51, 64, 86, 0.9);">
+                            <i class="fas fa-eye text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-3">Visió</h3>
+                        <p class="text-secondary leading-relaxed">Ser els <strong>partners de confiança</strong> per a la creació de cultures organitzatives centrades en el <strong>desenvolupament de les persones</strong></p>
+                            </div>
+                    <!-- Valores -->
+                    <div class="bg-white rounded-2xl p-8 border border-support shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 shadow-sm" style="color: rgba(51, 64, 86, 0.9);">
+                            <i class="fas fa-heart text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-neutral mb-4">Valors</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start text-secondary gap-3"><i class="fas fa-shield-halved text-teal-500 mt-1"></i> <div><strong>Compromís amb l'Excel·lència</strong></div></li>
+                            <li class="flex items-start text-secondary gap-3"><i class="fas fa-seedling text-teal-500 mt-1"></i> <div><strong>Sostenibilitat</strong></div></li>
+                            <li class="flex items-start text-secondary gap-3"><i class="fas fa-users text-teal-500 mt-1"></i> <div><strong>Intel·ligència Col·lectiva</strong></div></li>
+                            <li class="flex items-start text-secondary gap-3"><i class="fas fa-circle-user text-teal-500 mt-1"></i> <div><strong>Experiència de Client</strong></div></li>
+                            <li class="flex items-start text-secondary gap-3"><i class="fas fa-hand-holding-heart text-teal-500 mt-1"></i> <div><strong>Transparència</strong></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -239,11 +290,11 @@
                 
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center max-w-4xl mx-auto mb-20" data-aos="fade-up">
-                <span class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-display font-semibold mb-8">
+                <span class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-lg font-display font-semibold mb-8">
                     <i class="fas fa-briefcase"></i> Els Nostres Serveis
                 </span>
                 <h2 class="text-5xl lg:text-6xl font-display font-extrabold text-white leading-tight mb-6">
-                    Solucions que Transformen Organitzacions
+                    Solucions que Transformen
                 </h2>
                 <p class="text-white/90 text-xl leading-relaxed">
                     Dissenyades per maximitzar el potencial humà amb metodologies provades i resultats mesurables
@@ -252,11 +303,14 @@
             
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
                 <!-- Formacio universitaria i especialitzada -->
-                <a href="#contacto" class="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://euniv.eu/batxelor-en-psicologia/" target="_blank" class="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
                     <!-- Video Background Header -->
                     <div class="relative h-48 overflow-hidden">
                         <img src="images/formacio.jpg" alt="Formació universitària i especialitzada" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/30 to-primary/80"></div>
+                        <div class="absolute top-4 right-4 bg-white rounded-xl p-2 shadow-lg">
+                            <img src="images/clients/logo-universitat-europea.svg" alt="Universitat Europea" class="h-10 w-10 object-contain">
+                        </div>
                         <!-- Icon -->
                         <div class="absolute bottom-4 left-6">
                             <div class="w-14 h-14 rounded-xl flex items-center justify-center shadow-xl backdrop-blur-sm" style="background-color: rgba(51, 64, 86, 0.9);">
@@ -277,7 +331,7 @@
                 </a>
                     
                 <!-- Desenvolupament de persones i equips -->
-                <a href="#contacto" class="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                <a href="#cursos" class="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
                     <!-- Video Background Header -->
                     <div class="relative h-48 overflow-hidden">
                         <img src="images/desenvolupament.jpg" alt="Desenvolupament de persones i equips" class="w-full h-full object-cover">
@@ -397,7 +451,7 @@
         </div>
     </section>
 
-        <!-- Filosofía Section -->
+        <!-- Filosofía Section (comentada temporalmente)
         <section class="py-20 bg-gray-50" id="nosotros">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
@@ -408,7 +462,7 @@
                     <p class="text-secondary mt-4 text-lg">Els nostres principis són la brúixola que guia cada projecte, cada interacció i cada solució que oferim.</p>
                             </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Misión -->
+                    Misión
                     <div class="bg-white rounded-2xl p-8 border border-support shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
                         <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 shadow-sm" style="color: rgba(51, 64, 86, 0.9);">
                             <i class="fas fa-bullseye text-3xl"></i>
@@ -416,7 +470,7 @@
                         <h3 class="text-2xl font-display font-bold text-neutral mb-3">Missió</h3>
                         <p class="text-secondary leading-relaxed">Contribuïm a construir <strong>cultures organitzatives</strong> que posen les <strong>persones al centre</strong>, com a veritables generadores de valor per a que esdevinguin <strong>motors de canvi i innovació</strong>, des d&apos;una base de <strong>mútua confiança</strong></p>
                     </div>
-                    <!-- Visión -->
+                    Visión
                     <div class="bg-white rounded-2xl p-8 border border-support shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
                         <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 shadow-sm" style="color: rgba(51, 64, 86, 0.9);">
                             <i class="fas fa-eye text-3xl"></i>
@@ -424,7 +478,7 @@
                         <h3 class="text-2xl font-display font-bold text-neutral mb-3">Visió</h3>
                         <p class="text-secondary leading-relaxed">Ser els <strong>partners de confiança</strong> per a la creació de cultures organitzatives centrades en el <strong>desenvolupament de les persones</strong></p>
                             </div>
-                    <!-- Valores -->
+                    Valores
                     <div class="bg-white rounded-2xl p-8 border border-support shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="300">
                         <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 shadow-sm" style="color: rgba(51, 64, 86, 0.9);">
                             <i class="fas fa-heart text-3xl"></i>
@@ -441,6 +495,7 @@
                 </div>
             </div>
         </section>
+        -->
 
     
 
@@ -564,7 +619,7 @@
         <div class="container mx-auto px-6 relative">
             <!-- Header -->
             <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
-                <span class="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full text-sm font-semibold mb-6" style="color: rgba(51, 64, 86, 0.9);">
+                <span class="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full text-lg font-semibold mb-6" style="color: rgba(51, 64, 86, 0.9);">
                     <i class="fas fa-drafting-compass"></i> El Nostre Mètode
                 </span>
                 <h2 class="text-4xl lg:text-5xl font-display font-extrabold text-neutral leading-tight">Un Procés Centrat en les Persones</h2>
@@ -863,19 +918,16 @@
         })();
     </script>
 
-    <!-- Why Choose Us Section -->
-    <section class="py-24 relative overflow-hidden" id="porque-elegirnos">
-        <div class="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-violet-50"></div>
-        <div class="absolute -top-16 -left-16 w-64 h-64 rounded-full bg-cyan-200/30 blur-3xl"></div>
-        <div class="absolute -bottom-20 -right-20 w-72 h-72 rounded-full bg-fuchsia-200/30 blur-3xl"></div>
 
+    <!-- Experience Section -->
+    <section class="trust-section gradient-bg" id="experiencia">
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
-                <span class="inline-flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full text-sm font-semibold mb-6" style="color: rgba(51, 64, 86, 0.9);">
+                <span class="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
                     <i class="fas fa-award"></i> Per Què Triar-nos?
                 </span>
-                <h2 class="text-4xl lg:text-5xl font-display font-extrabold text-neutral leading-tight">Un Equip que Aporta Valor Real</h2>
-                <p class="text-secondary mt-4 text-lg">Combinem experiència, proximitat i rigor per generar impacte sostenible en persones i organitzacions.</p>
+                <h2 class="text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight">Un Equip que Aporta Valor Real</h2>
+                <p class="text-white/90 mt-4 text-lg">Combinem experiència, proximitat i rigor per generar impacte sostenible en persones i organitzacions.</p>
             </div>
 
             <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-7">
@@ -936,10 +988,6 @@
                 </article>
             </div>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="trust-section gradient-bg" id="experiencia">
         <div class="container mx-auto py-20">
             <div class="flex flex-col-reverse lg:flex-row items-center gap-16">
                 <!-- Visual -->
@@ -952,9 +1000,7 @@
                     </div>
                 <!-- Copy -->
                 <div class="w-full lg:w-1/2 space-y-6" data-aos="fade-right">
-                    <span class="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        <i class="fas fa-award"></i> 30 Anys de Confiança
-                    </span>
+                    
                     <h2 class="text-4xl lg:text-5xl font-display font-extrabold leading-tight text-white">Transformant organitzacions des de 1995</h2>
                     <p class="text-white/90">La nostra experiència i metodologia han ajudat a centenars d'empreses a assolir el seu màxim potencial humà.</p>
                     <ul class="space-y-3">
@@ -1032,7 +1078,7 @@
                 <!-- Berta Bassols -->
                 <div class="bg-gray-50 rounded-2xl p-6 text-center border border-support transform hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-xl" data-aos="fade-up" data-aos-delay="150">
                     <img class="w-28 h-28 rounded-full mx-auto mb-4 object-cover ring-4 ring-white shadow-lg" src="images/team/cberta.jpg" alt="Berta Bessols">
-                    <h3 class="text-xl font-display font-bold text-neutral">Berta Bassols González</h3>
+                    <h3 class="text-xl font-display font-bold text-neutral">Berta Bassols</h3>
                     <p class="text-primary font-semibold mb-3">Psicòloga del treball i Esportiva</p>
                     <p class="text-secondary text-sm mb-4">Apassionada i “disfrutona” de la vida, acompanya persones i equips a desplegar tot el seu talent. Entre colors, pot-its i reptes que desafien límits, contagia energia, humor i passió, convertint cada procés en una aventura única.</p>
                 </div>
